@@ -1,5 +1,7 @@
 # lf-documentation
-Public documentation for LightFi sensors, data etc.
+Public documentation for LightFi sensors, data etc. View online at:
+
+**[https://docs.lightfi.io](https://docs.lightfi.io)**
 
 ## Creating docs from markdown files
 
@@ -21,3 +23,7 @@ Public documentation for LightFi sensors, data etc.
 - Create github action to publish to `gh-pages` branch (edit from template)
 - Ensure repository setup is set to use `gh-pages` branch root
 - Should be available on [https://lightfilimited.github.io/lf-documentation/](https://lightfilimited.github.io/lf-documentation/)
+- Add custom domain to Organisation Settings (will need to add TXT record to DNS)
+- Add DNS CNAME record pointing `docs.lightfi.io` to `lightfilimited.github.io`
+- Wait a bit for DNS things to propagate
+- Add custom pages domain on github repository settings

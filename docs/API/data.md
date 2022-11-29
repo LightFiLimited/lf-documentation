@@ -6,7 +6,7 @@ Each sensor may report multiple data of different types e.g. temperature, humidi
 
 | `var_name` | Example Value | Unit | Description |
 |-----------------|---------------|------|-----------------|
-| `BACnetReads` | 10      | count        | integer number representing BMS queries of this sensor |
+| `BACnetReads` | 10      | count        | number of BMS queries of this sensor in the last period |
 | `batteryLevelPct` | 90  | %       | approximate percentage of battery remaining for battery powered sensors |
 | `CO2ppm` | 850  | ppm | measured Carbon Dioxide concentration (ppm) |
 | `clientsBLE` | 20  | count | number of occupancy indicating devices observed on BLE |
@@ -26,7 +26,7 @@ Each sensor may report multiple data of different types e.g. temperature, humidi
 
 Returning data in this way can be an advantage as it allows the user to create applications where they can specify their own threshold for "no presence" timeout (for example on [LightFi portal](https://portal.lightfi.io) you can use the sliders on the dashboard page in the "Motion Events" data dropdown to select e.g. "Occupied" if motion within the last 10 minutes and "Available" no motion within the last 2 hours), allowing you to have a live dashboard that can be suited to the customer preference. Note: The complication for this is that if the sensor is "offline" (onlineStatus not equal to 1) then you need to know this too in order to distinguish between "no presence" and "missing sensor".
 
-The value returned when querying raw live/historic `motionEvent` data is generally not needed but does give an indication of the number of recent motion events, the value is derived from the total count of motion events recorded by the sensor (this is reset when the base sensor reboot or sensor is disabled/enabled etc.) scaled using the following formula to reset/reduce the count after a period of inactivity:
+The value returned when querying raw live/historic `motionEvent` data is generally not needed but does give an indication of the number of recent motion events, the value is derived from the total count of motion events recorded by the sensor (this is reset when the base sensor reboot or sensor is moved between base senors etc.) scaled using the following formula to reset/reduce the count after a period of inactivity:
 
 ```python
   value = last_value * min(1, 600 / (max(timestamp - last_time, 1))) + 1)
