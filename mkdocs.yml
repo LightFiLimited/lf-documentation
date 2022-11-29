@@ -1,0 +1,4 @@
+site_name: LightFi
+site_description: LightFi sensor and data documentation
+theme:
+  name: material
