@@ -29,7 +29,7 @@ Returning data in this way can be an advantage as it allows the user to create a
 The value returned when querying raw live/historic `motionEvent` data is generally not needed but does give an indication of the number of recent motion events, the value is derived from the total count of motion events recorded by the sensor (this is reset when the base sensor reboot or sensor is moved between base senors etc.) scaled using the following formula to reset/reduce the count after a period of inactivity:
 
 ```python
-  value = last_value * min(1, 600 / (max(timestamp - last_time, 1))) + 1)
+  value = last_value * min(1, 600 / (max(timestamp - last_time, 1))) + 1
 ```
 (`timestamp` and `last_time` in seconds, `last_value` and `last_time` will be 0 for first data)
 
@@ -37,6 +37,6 @@ The value returned when querying raw live/historic `motionEvent` data is general
 
 In order to calculate useful utilisation data for the metric routes available e.g. [for a sensor](https://apiv2.lightfi.io/docs#/default/read_sensor_daily_data_range_sensors__sensor_id___var_name__daily_get) or [for a whole floor](https://apiv2.lightfi.io/docs#/default/read_location_direct_child_daily_data_range_locations__location_id___var_name__daily_get) a fixed threshold timeout for occupancy indication has been used. Utilisation (`utl`) percentage numbers returned by these routes are calculated based on a 10 minute threshold i.e. if there is less than 10 minutes between motion events the desk will be counted as in use, if more than 10 minutes as not in use.
 
-These routes allow you to restrict the hours and days for which the overall data is calculated, as is possible for other data/`var_name`, unlike other data the values are returned as `utl` (percentage utilisation) rather than min/avg/max values during the time period.
+These routes allow you to restrict the hours and days for which the overall data is calculated, as is possible for other data/`var_name`, unlike other data the values are returned as `utl` (percentage utilisation) rather than `min`/`avg`/`max` values during the time period.
 
 If you desire to implement your own utilisation metric calculations with a different "no presence" timeout, you are still able to do this from the raw historic motionEvents data. (Though doing so will obviously be slower than using the pre-calculated values.)
