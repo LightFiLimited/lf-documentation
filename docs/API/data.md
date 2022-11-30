@@ -22,20 +22,30 @@ Each sensor may report multiple data of different types e.g. temperature, humidi
 
 ## `motionEvent` data
 
-`motionEvent` data (as returned by PIR motion sensors) is slightly different from most other data in that the main data is the timestamp of the recorded data, with the given value not so significant. The raw live and historic `motionEvent` data should be thought of more as an event list: every data item, indicates a detected motion event. Note: `motionEvent`s are throttled by default to only record one event per 10 seconds, so after the first event the sensor itself may detect several instances of motion in the next 10 seconds but you will only receive the next `motionEvent` for an event at least 10 seconds after the first one.
+`motionEvent` data (as returned by PIR motion sensors) is slightly different from most other data in that the main significance is the timestamp of the recorded data, with the given value not so significant.
+The raw live and historic `motionEvent` data should be thought of more as an event list: every data item, indicates a detected motion event.
+Note: `motionEvent`s are throttled by default to only record one event per 10 seconds, so after the first event the sensor itself may detect several instances of motion in the next 10 seconds but you will only receive the next `motionEvent` for an event at least 10 seconds after the first one.
 
-Returning data in this way can be an advantage as it allows the user to create applications where they can specify their own threshold for "no presence" timeout (for example on [LightFi portal](https://portal.lightfi.io) you can use the sliders on the dashboard page in the "Motion Events" data dropdown to select e.g. "Occupied" if motion within the last 10 minutes and "Available" no motion within the last 2 hours), allowing you to have a live dashboard that can be suited to the customer preference. Note: The complication for this is that if the sensor is "offline" (onlineStatus not equal to 1) then you need to know this too in order to distinguish between "no presence" and "missing sensor".
+Returning data in this way can be an advantage as it allows the user to create applications where a custom timeout threshold for "Occupied"/"Unoccupied" can be specified.
+For example, on [LightFi portal](https://portal.lightfi.io) you can use the sliders on the dashboard page in the "Motion Events" data dropdown to select e.g. "Occupied" if motion within the last 10 minutes and "Available" if no motion within the last 2 hours, allowing a live dashboard that can be suited to the customer preference.
+Note: The complication with returning data in this way that if the sensor is "offline" (onlineStatus not equal to 1) then you need to know this too in order to distinguish between "no motionEvent" and "missing sensor".
 
-The value returned when querying raw live/historic `motionEvent` data is generally not needed but does give an indication of the number of recent motion events, the value is derived from the total count of motion events recorded by the sensor (this is reset when the base sensor reboot or sensor is moved between base senors etc.) scaled using the following formula to reset/reduce the count after a period of inactivity:
+#### `motionEvent` value
+The numeric value returned when querying raw live/historic `motionEvent` data is generally not needed but does give an indication of the number of recent motion events.
+The value is derived from a running count of motion events recorded by the sensor scaled using the following formula to reset/reduce the count after a period of inactivity:
 
 ```python
   value = last_value * min(1, 600 / (max(timestamp - last_time, 1))) + 1
 ```
-(`timestamp` and `last_time` in seconds, `last_value` and `last_time` will be 0 for first data)
+(`timestamp` and `last_time` in seconds, `last_value` and `last_time` will be 0 for first data, `value` is always rounded to the nearest integer)
+
+Thus if the count will always increase by 1 for every event seen less than 10 minutes (600 seconds) after the previous but will decrease for events seen after longer time gaps (likely resetting to 1 if the gap is significantly longer than 10 minutes).
+This allows a quick view of the occupancy level of a space, distinguishing between sensors that have been observing longer periods of occupancy and those with only infrequent events.
 
 ### Utilisation metric data (`/daily` routes)
 
-In order to calculate useful utilisation data for the metric routes available e.g. [for a sensor](https://apiv2.lightfi.io/docs#/default/read_sensor_daily_data_range_sensors__sensor_id___var_name__daily_get) or [for a whole floor](https://apiv2.lightfi.io/docs#/default/read_location_direct_child_daily_data_range_locations__location_id___var_name__daily_get) a fixed threshold timeout for occupancy indication has been used. Utilisation (`utl`) percentage numbers returned by these routes are calculated based on a 10 minute threshold i.e. if there is less than 10 minutes between motion events the desk will be counted as in use, if more than 10 minutes as not in use.
+In order to calculate useful utilisation data for the metric routes available e.g. [for a sensor](https://apiv2.lightfi.io/docs#/default/read_sensor_daily_data_range_sensors__sensor_id___var_name__daily_get) or [for a whole floor](https://apiv2.lightfi.io/docs#/default/read_location_direct_child_daily_data_range_locations__location_id___var_name__daily_get) a fixed threshold timeout for occupancy indication has been used.
+Utilisation (`utl`) percentage numbers returned by these routes are calculated based on a 10 minute threshold i.e. if there is less than 10 minutes between motion events the desk will be counted as in use, if more than 10 minutes as not in use.
 
 These routes allow you to restrict the hours and days for which the overall data is calculated, as is possible for other data/`var_name`, unlike other data the values are returned as `utl` (percentage utilisation) rather than `min`/`avg`/`max` values during the time period.
 
