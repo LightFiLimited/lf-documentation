@@ -27,3 +27,4 @@ Public documentation for LightFi sensors, data etc. View online at:
 - Add DNS CNAME record pointing `docs.lightfi.io` to `lightfilimited.github.io`
 - Wait a bit for DNS things to propagate
 - Add custom pages domain on github repository settings
+- Add `CNAME` file to `docs/`
