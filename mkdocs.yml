@@ -2,3 +2,26 @@ site_name: LightFi
 site_description: LightFi sensor and data documentation
 theme:
   name: material
+  palette:
+  - media: '(prefers-color-scheme: light)'
+    scheme: default
+    primary: indigo
+    accent: amber
+    toggle:
+      icon: material/lightbulb
+      name: Switch to light mode
+  - media: '(prefers-color-scheme: dark)'
+    scheme: slate
+    primary: indigo
+    accent: amber
+    toggle:
+      icon: material/lightbulb-outline
+      name: Switch to dark mode
+  # features:
+  # - search.suggest
+  # - search.highlight
+  # - content.tabs.link
+  # icon:
+  #   repo: fontawesome/brands/github-alt
+  logo: img/logo_512x512_white.png
+  #favicon: img/favicon.png
