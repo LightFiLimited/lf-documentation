@@ -8,13 +8,14 @@ Each sensor may report multiple data of different types e.g. temperature, humidi
 |-----------------|---------------|------|-----------------|
 | `BACnetReads` | 10      | count        | number of BMS queries of this sensor in the last period |
 | `batteryLevelPct` | 90  | %       | approximate percentage of battery remaining for battery powered sensors |
-| `CO2ppm` | 850  | ppm | measured Carbon Dioxide concentration (ppm) |
+| `CO2ppm` | 850  | ppm | measured Carbon Dioxide concentration in parts per million |
 | `clientsBLE` | 20  | count | number of occupancy indicating devices observed on BLE |
 | `clientsWiFi` | 20  | count | number of occupancy indicating devices observed on WiFi |
 | `illuminanceArb` | 20.0  | arbitrary | measured light level |
 | `irSignatures` | 2  | count | measured thermal signatures (people) under the sensor |
 | `motionEvent` | 1  | arbitrary | Each data point indicates a detected motion event, the value can be ignored but gives an indication of the number of recent events (see [below](#motionevent-data)) |
 | `onlineStatus` | 1  | enum | Indicates online status of the sensor (1 = online, 0 = offline, -1 = rebooting, -2 = retired) |
+| `particulateMatter` | 10  | µg/m³ | measured particulate matter level (PM2.5 - PM1/PM10 may be available as extra data) |
 | `pressuremBar` | 1000  | mBar | measured air pressure |
 | `relativeHumidity` | 50.0  | % | measured relative humidity of air |
 | `temperatureC` | 20.1  | ℃ | measured temperature |
