@@ -10,8 +10,8 @@ your initial sensor purchase. Additional accounts can be created by the Admin us
 ### Choosing the location
 
 Use the selector in the top left to choose your location.
-Each location can have sub-locations, this is usually indicated by an "ALL" dropdown,
-use the dropdown to select the sub-location you are particularly interested in.
+Each location can have sub-locations, this is usually indicated by an "ALL" drop-down,
+use the drop-down to select the sub-location you are particularly interested in.
 Repeat the process if you want to keep going to more more specific locations.
 A typical location structure may be something like:
 
@@ -59,7 +59,7 @@ You should use a TOTP application such as Google Authenticator or Password Manag
 
 ### Dashboard Screen
 
-Shows detailed live data for the selected location (dropdowns include sublocations, map only shows the current location).
+Shows detailed live data for the selected location (drop-downs include sub-locations, map only shows the current location).
 
 ### Compare Screen
 

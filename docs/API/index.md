@@ -34,7 +34,7 @@ a typical set of configuration parameters is shown below:
 #### Token lifetime
 
 The lifetime of the tokens can affect the security level of your data in case of a token being
-obtained by a mallicious party.
+obtained by a malicious party.
 A shorter **access token** lifetime will mean that the token can only be used for a shorter period
 before the user must log in again or the **refresh token** should be used to obtain a new access token.
 
@@ -49,7 +49,7 @@ The refresh token should always be stored securely and should not be shared with
 
 These URLs are useful for allowing a user to log in using the hosted web UI.
 Thus you don't need to handle user authentication manually.
-These URLs should ideally be kept to a minumum set to enhance security.
+These URLs should ideally be kept to a minimum set to enhance security.
 A default set of URLs are provided which allow login for the API test page, Postman and local development.
 These URLs should help start using the API but can be disabled or changed as your application develops.
 
@@ -85,7 +85,9 @@ To implement a machine-to-machine API shim using OAuth2 refresh tokens, you woul
   5. When the access token expires, use the refresh token to request a new access token from the server.
   This is done by sending a request to the server's OAuth2 token endpoint,
   along with the appropriate grant type ("refresh_token").
-  An example of how to do this using Postman can be found [here](/API/postman_refresh_token/#using-the-refresh-token).
+  An example of how to do this using Postman can be found [here](/API/postman_refresh_token/#using-the-refresh-token),
+  but this should be built in to your application so that it happens automatically when the access token is close
+  to expiry.
 
   6. Update your application to use the new access token for subsequent API requests.
 
