@@ -51,3 +51,5 @@ Utilisation (`utl`) percentage numbers returned by these routes are calculated b
 These routes allow you to restrict the hours and days for which the overall data is calculated, as is possible for other data/`var_name`, unlike other data the values are returned as `utl` (percentage utilisation) rather than `min`/`avg`/`max` values during the time period.
 
 If you desire to implement your own utilisation metric calculations with a different "no presence" timeout, you are still able to do this from the raw historic motionEvents data. (Though doing so will obviously be slower than using the pre-calculated values.)
+
+Note: `utl` values are reported as a decimal between 0 and 1 indicating the percentage occupancy in that hour e.g. 0.79 is 79% utilised. Since this numbers are calculated for the timezone of the sensor, in regions with daylight savings time it is possible to get a `utl` value up to a maximum of 2 for the hour when the clocks go back, since this hour will occur 'twice' during that night.
