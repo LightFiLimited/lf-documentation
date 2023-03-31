@@ -19,7 +19,7 @@ You should define the variables used in the OAuth config according to the client
 
 ### Using the refresh token
 Use the `oauth_url` to obtain an `access_token` using your `refresh_token`, this can then be used to make calls to the API.
-You do not need to do this in Postman, but the following images show how to use Postman to obtain a new `access_token`
+You do not need to do this in Postman (a python example can be found [here](/API/client_example/#using-a-refresh-token)), but the following images show how to use Postman to obtain a new `access_token`
 
 ![Refresh auth](../img/api/postman_3Refresh_Auth.png)
 
