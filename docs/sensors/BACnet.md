@@ -17,10 +17,6 @@ One of the main features of the [Base](#lightfi-base) sensor is the wireless tec
 
 The LightFi "Base" sensor is a long-range, broad level occupancy sensor, which determines the percentage occupancy levels by measuring the number active devices on a floor area c.3,000 – 5,000+ sqft wide.
 
-The Base sensor also functions as a router/gateway for LightFi sensors, with it’s own BACnet network number (configurable via LightFi Portal).
-
-This sensor will appear as a BACnet device on the BACnet network created by the router internal to this Base Sensor.
-
 | Object Type   | Object ID | Object Name                     | Present Value                |
 |---------------|-----------|---------------------------------|------------------------------|
 | Device        | (1)       | LightFi_LF-AABBCCDDEEFF         | N/A                          |
@@ -35,13 +31,6 @@ Notes:
 (2) The Object Name field will depend on the device’s MAC Address. This value should start with "LightFi_LF-".
 
 ## LightFi Sahara
-
-The Sahara sensor measures: Carbon Dioxide (CO2) levels with a dual-channel NDIR sensor and Particulate Matter (PM2.5).
-
-The sensor requires a configuration with a LightFi Base Sensor in order to be visible on the BACnet network.
-
-This sensor will appear as a BACnet device on the BACnet network created by the BACnet router internal to the Base Sensor.
-
 
 | Object Type   | Object ID | Object Name                     | Present Value                |
 |---------------|-----------|---------------------------------|------------------------------|
@@ -60,11 +49,6 @@ Notes:
 
 The Hoth sensor measures temperature, relative humidity and its own battery level.
 
-The sensor requires a configuration with a LightFi Base sensor in order to be visible on the BACnet network.
-
-This sensor will appear as a BACnet device on the BACnet network created by the BACnet router internal to the Base sensor.
-
-
 | Object Type   | Object ID | Object Name                          | Present Value                               |
 |---------------|-----------|--------------------------------------|---------------------------------------------|
 | Device        | (1)       | LightFi_MS1-AABBCCDDEEFF (2)         | N/A                                         |
@@ -77,15 +61,11 @@ Notes:
 
 (1) Object ID can be configured via LightFi Portal;
 
-(2) The Object Name field will depend on the device’s MAC Address. This value should start with "LightFi_MS1-". 
+(2) The Object Name field will depend on the device’s MAC Address. This value should start with "LightFi_MS1-".
 
 ## LightFi X1
 
-The X1 is a battery powered Passive Infrared (PIR) motion sensor, designed to detect binary desk or room occupancy. 
-
-The sensor requires a configuration with a LightFi Base sensor in order to be visible on the BACnet network.
-
-This sensor will appear as a BACnet device on the BACnet network created by the BACnet router internal to the Base sensor.
+The X1 is a battery powered Passive Infrared (PIR) motion sensor, designed to detect binary desk or room occupancy.
 
 
 | Object Type   | Object ID | Object Name                      | Present Value                |
