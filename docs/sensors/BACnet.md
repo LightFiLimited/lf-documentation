@@ -32,6 +32,9 @@ Notes:
 
 ## LightFi Sahara
 
+The Sahara sensor measures: Carbon Dioxide (CO2) levels with a dual-channel NDIR sensor and Particulate Matter (PM2.5).
+
+
 | Object Type   | Object ID | Object Name                     | Present Value                |
 |---------------|-----------|---------------------------------|------------------------------|
 | Device        | (1)       | LightFi_LF5-AABBCCDDEEFF (2)    | N/A                          |
