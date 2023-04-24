@@ -9,7 +9,7 @@ Public documentation for LightFi sensors, data etc. View online at:
 
 #### Initial setup
 - See [Mkdocs getting-started](https://squidfunk.github.io/mkdocs-material/getting-started/)
-- Create venv `python -m venv venv` & source virtual environment
+- Create venv `python -m venv venv` & source virtual environment e.g. `source venv/bin/activate`
 - Install mkdocs `pip install mkdocs-material`
 - Bootstrap mkdocs `mkdocs new .`
 - Edit `mkdocs.yml` to add theme etc. (see getting-started above)
