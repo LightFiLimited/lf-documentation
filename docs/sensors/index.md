@@ -4,7 +4,7 @@ LightFi produce a range of sensors for gathering building data and facilitation 
 
 ## LightFi Base
 
-The LightFi "Base" sensor is a long-range, broad level occupancy sensor, which determines the percentage occupancy levels by measuring the number active devices on a floor area, with coverage of 250 – 500 square meters depending on placement and number of walls etc. (the sensors can function through walls but the range is reduced).
+The LightFi "Base" sensor is a long-range, broad level occupancy sensor, which determines the percentage occupancy levels by measuring the number active devices on a floor area, with coverage of 250 – 1000 square meters depending on placement and number of walls etc. (the sensors can function through walls but the range is reduced).
 
 The Base sensor also functions as a router/gateway for LightFi sensors, reporting data to the cloud and allowing configuration of sensor settings and sub-sensors via the portal or API interface.
 

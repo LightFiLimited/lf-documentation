@@ -20,7 +20,7 @@ The sensor data from all sensors can then be used by the BMS to monitor and dire
 
 ## LightFi Base
 
-The LightFi "Base" sensor is a long-range, broad level occupancy sensor, which determines the percentage occupancy levels by measuring the number active devices on a floor area, with coverage of 250 - 500 m².
+The LightFi "Base" sensor is a long-range, broad level occupancy sensor, which determines the percentage occupancy levels by measuring the number active devices on a floor area, with coverage of 250 - 500+ m².
 
 | Object Type   | Object ID | Object Name                     | Present Value                |
 |---------------|-----------|---------------------------------|------------------------------|
