@@ -1,21 +1,26 @@
 # BACnet
 
-Our solution consists in the use of an array of sensors to monitor multiple types of physical spaces (such as offices, airports, universities, ...).
+LightFi sensors can be used to monitor multiple types of physical spaces (such as offices, airports, universities, ...).
 
-These sensors are able to measure different types of data:
+These sensors are able to measure different types of data and report this data directly to the building management system (BMS):
 
-- [Hoth](#lightfi-hoth) - Temperature and Humidity;
-- [Sahara](#lightfi-sahara) - CO2 and Particulate Matter;
-- [X1](#lightfi-x1) - Presence;
 - [Base](#lightfi-base) - Broad Level Occupancy Sensor.
+- [Hoth](#lightfi-hoth) - Temperature and Humidity;
+- [Sahara](#lightfi-sahara) - CO₂ and Particulate Matter;
+- [X1](#lightfi-x1) - Presence;
 
-One of the main features of the [Base](#lightfi-base) sensor is the wireless technology capabilities it has which allows it to act as a gateway for receiving data from the other sensors and send it to our [platform](http://portal.lightfi.io) for data visualisation. This feature, along with our BACnet/IP implementation, enables the Base to create BACnet representations of the actual wireless sensors.
+The [Base](#lightfi-base) sensor includes wireless technology capabilities that allow it to act as a gateway for receiving data from the other sensors and send it to the LightFi cloud [platform](http://portal.lightfi.io) for data visualisation. The Base sensor also acts as a gateway for the BACnet/IP implementation, enabling the Base to create BACnet representations of the actual wireless sensors.
 
-![](../img/sensors/bacnet_diagram.svg)
+The sensor data from all sensors can then be used by the BMS to monitor and directly control the building, for example using occupancy to alter the ventilation dynamically according to the building usage, keeping the air quality high and the energy use low.
+
+<figure markdown>
+  ![Example BACnet network](../img/sensors/bacnet_diagram.svg)
+  <figcaption>Example BACnet implementation of LightFi sensors on a BMS network</figcaption>
+</figure>
 
 ## LightFi Base
 
-The LightFi "Base" sensor is a long-range, broad level occupancy sensor, which determines the percentage occupancy levels by measuring the number active devices on a floor area c.3,000 – 5,000+ sqft wide.
+The LightFi "Base" sensor is a long-range, broad level occupancy sensor, which determines the percentage occupancy levels by measuring the number active devices on a floor area, with coverage of 250 - 500 m².
 
 | Object Type   | Object ID | Object Name                     | Present Value                |
 |---------------|-----------|---------------------------------|------------------------------|
@@ -92,11 +97,11 @@ Activation of the Base Sensor can be made through the LightFi Portal by accessin
 
 When activating the Base Sensor in our platform, the following fields are able to be configured:
 
-- Building Network Number;
-- VLAN Network Number;
-- BACnet ID of the device.
+- Building Network Number - The network number of the existing building BACnet/IP network the sensor will be connected to e.g. 2000 (For BACnet/IP this number may not affect your implementation, if you do not know the number it may be possible to use a default like 2000);
+- VLAN Network Number - This should not clash with any other BACnet network numbers;
+- BACnet ID of the device - A unique ID for the sensor according to your BACnet/IP configuration.
 
-After entering these fields, the device will take around 2 minutes to apply the changes.
+After entering these fields, the device will take around 2 minutes to apply the changes and create the BACnet gateway.
 
 ### Wireless Sensors
 
@@ -104,4 +109,4 @@ All the other available wireless sensors can be activated in the same way, by ac
 
 This will make a text field appear for entering its BACnet ID. Note that if a BACnet ID is not entered, our system will pick one and present it in the configuration page.
 
-Contrary to the Base sensor, these will immediatly be available in the BACnet Network.
+Unlike the Base sensor, these changes will apply immediately and the sensors should be available on the BACnet/IP Network within a few seconds.
