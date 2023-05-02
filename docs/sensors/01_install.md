@@ -31,10 +31,7 @@ Access Points.
 #### Power
 The BASE sensor can be powered via DC power input or Power over Ethernet (PoE) 802.3af
 (48V) via the POE Port. In almost all instances, we recommend using PoE, as this will
-provide data and power over a single cable. Where PoE is not available the device can be powered using the DC power input port.
-
-CAUTION: DO NOT POWER DEVICE USING DC CONNECTION AND PoE AT THE SAME TIME, AS THIS
-MAY RESULT IN DAMAGE TO THE DEVICE AND RENDER THE WARRANTY NULL AND VOID.
+provide data and power over a single cable. Where PoE is not available the device can be powered using the DC power input port (it is not necessary, or desirable to power using both PoE and DC input simultaneously).
 
 ![PoE Port](../img/sensors/install/2_Base_PoE-250px.png)
 
@@ -78,7 +75,7 @@ To provision the BASE sensor on LightFi’s Portal, you will need to following:
 - Physical access to the BASE sensor
 - Laptop computer with an Ethernet port and WiFi connection
 
-##### 1 - Boot sensor
+#### 1 - Boot sensor
 Please ensure the BASE sensor is powered and connected to the internet. The LEDs
 indicate the status of the BASE sensor:
 
@@ -88,10 +85,7 @@ indicate the status of the BASE sensor:
 Once plugged in, please allow 5 minutes for the boot sequence to finish before any
 troubleshooting.
 
-CAUTION: DO NOT POWER DEVICE USING DC CONNECTION AND PoE AT THE SAME TIME, AS THIS
-MAY RESULT IN DAMAGE TO THE DEVICE AND RENDER THE WARRANTY NULL AND VOID.
-
-##### 2 - Setup service port connection
+#### 2 - Setup service port connection
 (Before you make the changes to your network configuration, note your default LAN settings
 before changing them, this will help when resetting them back when finished.)
 
@@ -163,3 +157,63 @@ The BASE sensor is now being provisioned. Please do not unplug the BASE sensor f
 computer (or internet) until the web page says that the setup has been completed. The BASE
 sensor will then reboot. Please allow up to 5 minutes for the BASE sensor to appear on the
 LightFi Portal and 10 minutes for the first data to arrive.
+
+
+## Installing Sub-sensors
+### Overview
+
+Installation of LightFi sub-sensors such as Sahara (Air Quality), Alpine (CO₂/Temperature/Humidity), Hoth (Temperature/Humidity) or X1 (PIR Motion) can be performed entirely using the LightFi portal.
+
+To perform the configuration, you will need the following:
+
+- The BASE sensors installed and provisioned
+- A smartphone or similar portable device, ideally with a functional camera or a computer with web browser
+- An internet connection
+
+### Configuration
+
+#### 1 - Place sensor
+
+Installed the sensor in the room or location you want to monitor,
+power the sensor as per the sensor instructions.
+Ensure that it is physically accessible to you or that you have recorded the
+details needed below.
+
+
+#### 2 - Select Install Location
+
+Login to your LightFi Portal account in a web browser on your phone. Open the main menu
+(top left) and go to the “Config” page. Using the dropdown at the top of the screen, select
+the building and floor (sub locations) where the sensor is installed.
+
+![Deploy Location](../img/sensors/install/11_sub-sensor_deploy.png)
+
+#### 3 - Find the sensor
+
+To find the new sensor click on the “+” in the “Configured Sensors” section. A list
+of all IoT sensors near any BASE sensor on that floor (and not already configured) will appear.
+To find a specific sensor you can press the Search icon and either:
+
+- press the square Frame icon to the left of the search bar and scan the sensor’s QR
+code with your camera; or
+- manually type in the sensor’s id (last 4 digits is usually enough)
+
+![Sensor QR](../img/sensors/install/12_sub-sensor_QR.png)
+
+#### 4 - Add details
+
+Once you've found the sensor you want to configure, press the square “+” to its
+right. Please give it a name representing the room or area (so it is easy to find later). Scroll
+down and give the sensor position on the floor plan (by pressing on the floor plan
+in the room or area where the sensor is located). If the floor plan is not initially on
+screen, click on the “Go to location” icon in the top left corner of the map.
+
+![Sensor Details](../img/sensors/install/13_sub-sensor_name.png)
+![Sensor Position](../img/sensors/install/14_sub-sensor_position.png)
+
+#### 5 - Complete
+
+To complete the setup, press “Add New Sensor”. The sensor is now configured on
+the LightFi Portal, and data is being collected.
+
+
