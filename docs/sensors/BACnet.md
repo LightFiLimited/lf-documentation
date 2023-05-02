@@ -103,6 +103,17 @@ When activating the Base Sensor in our platform, the following fields are able t
 
 After entering these fields, the device will take around 2 minutes to apply the changes and create the BACnet gateway.
 
+#### Example of Base Sensor BACnet configuration
+
+1. Using the LightFi Portal dashboard, select a sensor and go to the sensor configuration page by clicking on "Info":
+![1](../img/sensors/bacnet/01_select_sensor.jpg)
+2. On the Sensor Configuration page, click on "BACnet Config" section and then press "Enable":
+![2](../img/sensors/bacnet/02_bacnet_config.jpg)
+3. Press on the "Enable" button, fill the fields and then press "Submit":
+![3](../img/sensors/bacnet/03_fill_bacnet.jpg)
+4. When you press submit, a small blue circle will indicate the sensor is BACnet enabled (`1.`) and a Success/confirmation message (`2.`) will appear.
+![4](../img/sensors/bacnet/04_bacnet_confirmation.jpg)
+
 ### Wireless Sensors
 
 All the other available wireless sensors can be activated in the same way, by accessing  "BACnet Config" in the desired wireless sensor configuration page and pressing the "Enable" button.
@@ -110,3 +121,16 @@ All the other available wireless sensors can be activated in the same way, by ac
 This will make a text field appear for entering its BACnet ID. Note that if a BACnet ID is not entered, our system will pick one and present it in the configuration page.
 
 Unlike the Base sensor, these changes will apply immediately and the sensors should be available on the BACnet/IP Network within a few seconds.
+
+#### Example of Wireless Sensors BACnet configuration
+
+A wireless sensor can only be BACnet enabled if it was previously registered to on the portal (See [here](../POINT_TO_SUBSENSOR_CONFIGURATION)).
+
+1. Using the dashboard, select a wireless sensor and go to the sensor configuration page by clicking on "Info":
+![1](../img/sensors/bacnet/05_select_wireless_sensor.jpg)
+2. On the Sensor Configuration page, click on "BACnet Config" section and then press "Enable":
+![2](../img/sensors/bacnet/06_bacnet_config.jpg)
+3. Fill the fields and then press "Submit":
+![3](../img/sensors/bacnet/07_fill_bacnet.jpg)
+4. When you press submit, a small blue circle will indicate the sensor is BACnet enabled (`1.`) and a Success/confirmation message (`2.`) will appear.
+![4](../img/sensors/bacnet/08_bacnet_confirmation.jpg)
