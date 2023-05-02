@@ -3,13 +3,21 @@ Public documentation for LightFi sensors, data etc. View online at:
 
 **[https://docs.lightfi.io](https://docs.lightfi.io)**
 
-## Creating docs from markdown files
+## Running locally
+
+- [First time only] Create venv `python -m venv venv`
+- source virtual environment e.g. `source venv/bin/activate`
+- [First time only] Install mkdocs `pip install mkdocs-material`
+- Can edit documentation in `./docs`, see [Writing your docs](https://www.mkdocs.org/user-guide/writing-your-docs/) 
+- `mkdocs serve -a localhost:8001` (on port 8001) to serve and view changes
+
+## Deployment notes
 
 ### Mkdocs
 
 #### Initial setup
 - See [Mkdocs getting-started](https://squidfunk.github.io/mkdocs-material/getting-started/)
-- Create venv `python -m venv venv` & source virtual environment
+- Create venv `python -m venv venv` & source virtual environment e.g. `source venv/bin/activate`
 - Install mkdocs `pip install mkdocs-material`
 - Bootstrap mkdocs `mkdocs new .`
 - Edit `mkdocs.yml` to add theme etc. (see getting-started above)
