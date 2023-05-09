@@ -7,6 +7,7 @@ These sensors are able to measure different types of data and report this data d
 - [Base](#lightfi-base) - Broad Level Occupancy Sensor.
 - [Hoth](#lightfi-hoth) - Temperature and Humidity;
 - [Sahara](#lightfi-sahara) - CO₂ and Particulate Matter;
+- [Alpine](#lightfi-alpine) - CO₂, Temperature and Relative Humidity;
 - [X1](#lightfi-x1) - Presence;
 
 The [Base](#lightfi-base) sensor includes wireless technology capabilities that allow it to act as a gateway for receiving data from the other sensors and send it to the LightFi cloud [platform](http://portal.lightfi.io) for data visualisation. The Base sensor also acts as a gateway for the BACnet/IP implementation, enabling the Base to create BACnet representations of the actual wireless sensors.
@@ -41,7 +42,7 @@ Notes:
 
 ### LightFi Sahara
 
-The Sahara sensor measures: Carbon Dioxide (CO2) levels with a dual-channel NDIR sensor and Particulate Matter (PM2.5).
+The Sahara sensor measures: Carbon Dioxide (CO₂) levels with a dual-channel NDIR sensor and Particulate Matter (PM2.5).
 
 | Object Type   | Object ID | Object Name                     | Present Value                |
 |---------------|-----------|---------------------------------|------------------------------|
@@ -57,6 +58,27 @@ Notes:
 2. The Object Name field will depend on the device’s MAC Address. This value should start with "LightFi_LF5-".
 
 3. The PICS document for this sensor can be found here: [LightFi Sahara](https://nextcloud.lightfi.io/index.php/s/f7kEC7t4rrD3pKo)
+
+### LightFi Alpine
+
+The Alpine sensor measures: Carbon Dioxide (CO₂) levels with a dual-channel NDIR sensor, Temperature and Relative Humidity.
+
+| Object Type   | Object ID | Object Name                          | Present Value                               |
+|---------------|-----------|--------------------------------------|---------------------------------------------|
+| Device        | (1)       | LightFi_AQ2-AABBCCDDEEFF (2)         | N/A                                         |
+| Analog Input  | AI1       | Carbon Dioxide level (ppm)           | Current Reading / -999 if not initialised   |
+| Analog Input  | AI2       | Temperature value (Celsius)          | Current Reading / -1 if not initialised     |
+| Analog Input  | AI3       | Relative Humidity value (Percentage) | Current Reading / -1 if not initialised     |
+| Analog Input  | AI4       | Battery Level Value (Percentage)     | Current Reading / -999 if not initialised   |
+| Analog Input  | AI5       | RSSI                                 | Current Reading / -999 if not initialised   |
+
+Notes:
+
+1. Object ID can be configured via LightFi Portal;
+
+2. The Object Name field will depend on the device’s MAC Address. This value should start with "LightFi_AQ2-".
+
+3. The PICS document for this sensor can be found here: [LightFi Alpine]().
 
 ### LightFi Hoth
 
