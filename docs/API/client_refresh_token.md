@@ -41,7 +41,8 @@ You do not need to do this in Postman (a python example can be found [here](/API
 export CLIENT_ID=YOUR_CLIENT_ID
 export CLIENT_SECRET=YOUR_CLIENT_SECRET
 ```
-- Run the script (below) and navigate to http://localhost:3000 to begin the login process (the URL can be changed but make sure that the URL you use is registered as a `callback_url` for your API client).
+- Save the script (below) e.g. as `oauth_obtain_refresh_token.py`
+- Run the script and navigate to http://localhost:3000 in web browser to begin the login process (the URL can be changed but make sure that the URL you use is registered as a `callback_url` for your API client).
 ```sh
 python oauth_obtain_refresh_token.py
 ```
