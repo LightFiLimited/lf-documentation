@@ -1,10 +1,11 @@
 # API Client Example
 
-## Install OpenAPI generator
+## Python Example API Client
+### Install OpenAPI generator
 
 See instructions from [OpenAPITools](https://github.com/OpenAPITools/openapi-generator/)
 
-## Generate a client
+### Generate a client
 
 An API client for python can be generated using the following example command:
 
@@ -12,9 +13,9 @@ An API client for python can be generated using the following example command:
 
 After generating the API client, see the generated documentation for more info at `python_api_client/README.md`
 
-## Example client script
+### Client script
 
-### Basic starting place
+#### Basic starting place
 A basic example script to make an API call using python3
 
 ```python
@@ -42,7 +43,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 ```
 
-### Access token expiry checking
+#### Access token expiry checking
 
 You can use a function like the following to check whether your access token is expired and needs refreshing
 
@@ -58,7 +59,7 @@ def check_token_expired(token: str):
 ```
 
 
-### Using a refresh token
+#### Using a refresh token
 
 To handle obtaining a new `access_token` using your `refresh_token` (see [Obtaining an OAuth2 refresh token](/API/client_refresh_token/)) you can use code like the following:
 
@@ -92,7 +93,7 @@ refresh_token = os.environ["REFRESH_TOKEN"]
 access_token = refresh_oauth2_token(token_url, client_id, client_secret, refresh_token)
 ```
 
-### Periodic API polling with automatic token refresh
+#### Periodic API polling with automatic token refresh
 
 Combining the token validation and refreshing mechanisms, we can design a wrapper that automatically manages token acquisition for a long-running client that periodically fetches data. In the following example, the client polls for a new Carbon Dioxide reading from a sensor every minute and logs any new readings to the console:
 
@@ -205,4 +206,85 @@ while True:
         print(f"{timestamp} CO2 level: {value} ppm")
         timestamp_last = timestamp
     time.sleep(60)
+```
+
+## Typescript Example API Client
+
+### Install OpenAPI generator
+
+See instructions from [OpenAPITools](https://github.com/OpenAPITools/openapi-generator/)
+
+### Generate a client
+
+An API client for typescript can be generated using the following example command:
+
+` openapi-generator-cli generate -i https://apiv2.lightfi.io/openapi.json --generator-name typescript-axios -o src/services/api`
+
+### Client Script
+
+#### Necessary variables
+
+```typescript
+API_URL= https://apiv2.lightfi.io
+API_AUTH_TOKEN_URL= https://lightfiv2.auth.eu-west-2.amazoncognito.com/oauth2/token
+API_TOKEN_CLIENT_ID= {{ To be accessed via administration }}
+API_TOKEN_CLIENT_SECRET = {{{{ To be accessed via administration }}}}
+API_REFRESH_TOKEN = {{ See documentation for how to obtain }}
+```
+
+#### Get Refresh Token
+
+To obtain the refresh token see the documentation examples for Postman or python [here](/API/client_refresh_token).
+
+#### Get Access Token
+
+After generating refresh token. Access token can be generated using following function:
+
+```typescript
+const  getAccessToken = async () => {
+	const  accessToken = await  fetch(process.env.API_AUTH_TOKEN_URL, {
+		method:  "POST",
+		headers: {
+			"Content-Type":  "application/x-www-form-urlencoded",
+		},
+		body:  new  URLSearchParams({
+			grant_type:  "refresh_token",
+			client_id:  API_TOKEN_CLIENT_ID,
+			client_secret:  API_TOKEN_CLIENT_SECRET,
+			refresh_token:  AUTHORIZATION_REFRESH_TOKEN,
+		}),
+	})
+		.then((response) =>  response.json())
+		.then((data) =>  data.access_token);
+	return  accessToken;
+};
+```
+
+[ Note: For continuously running application, ```accessToken``` expiry is also available within the response json. It can be stored as variable and generate accessToken only upon expiration]
+
+Generated Access token can be finally used to create api config and perform API calls
+
+```typescript
+const  apiConfig = async () =>
+	new  Configuration({
+		basePath:  API_URL,
+		accessToken:  await  getAccessToken(),
+	});
+
+const  apiService = async () =>  new  DefaultApi(await  apiConfig());
+```
+
+#### Example API Call
+
+For instance to receive location properties from api call:
+
+```typescript
+ const getLocationProperties = async(locationId:string): Promise<LocationOutput> => {
+	const apiServiceConfig = await apiService();
+	const {data} = await apiServiceConfig
+		.readLocationProperties(locationId)
+		.catch((res) => throw new Error(res);
+	return data;
+}
+
 ```
