@@ -30,8 +30,21 @@ You do not need to do this in Postman (a python example can be found [here](/API
 ## Using Python/Flask to obtain an OAuth2 refresh token
 
 - Make sure you have python and [flask](https://flask.palletsprojects.com/en/2.3.x/installation/) installed, either globally or in a python virtual environment.
+  - e.g. To install in a python virtual environment using pip
+  ```sh
+  python -m venv venv  # Create virtual environment
+  source venv/bin/activate
+  pip install flask requests
+  ```
 - The default script (below) obtains `CLIENT_ID` and `CLIENT_SECRET` from environment variables, so set these in your environment.
+```sh
+export CLIENT_ID=YOUR_CLIENT_ID
+export CLIENT_SECRET=YOUR_CLIENT_SECRET
+```
 - Run the script (below) and navigate to http://localhost:3000 to begin the login process (the URL can be changed but make sure that the URL you use is registered as a `callback_url` for your API client).
+```sh
+python oauth_obtain_refresh_token.py
+```
 
 ```python
 import json

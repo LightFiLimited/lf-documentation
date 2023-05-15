@@ -1,5 +1,10 @@
 # API Client Example
 
+Below are some basic examples of how to get started writing an API client
+for the [LightFi API](https://apiv2.lightfi.io/docs) using
+[python](/API/client_example/#python-example-api-client)
+or [typescript](/API/client_example/#typescript-example-api-client).
+
 ## Python Example API Client
 ### Install OpenAPI generator
 
