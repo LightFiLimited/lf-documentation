@@ -73,7 +73,7 @@ To implement a machine-to-machine API shim using OAuth2 refresh tokens, you woul
   This is done by sending a request to the server's OAuth2 token endpoint
   (`oauth_url` provided with your client credentials),
   along with the appropriate grant type ("Authorization Code") and other required parameters.
-  An example of how to do this using Postman can be found [here](/API/postman_refresh_token/).
+  Example of how to do this using Postman or python can be found [here](/API/client_refresh_token/).
 
   3. Store the refresh token securely.
   This is important because the refresh token can be used to obtain new access tokens,
@@ -85,9 +85,9 @@ To implement a machine-to-machine API shim using OAuth2 refresh tokens, you woul
   5. When the access token expires, use the refresh token to request a new access token from the server.
   This is done by sending a request to the server's OAuth2 token endpoint,
   along with the appropriate grant type ("refresh_token").
-  An example of how to do this using Postman can be found [here](/API/postman_refresh_token/#using-the-refresh-token),
+  An example of how to do this using Postman can be found [here](/API/client_refresh_token/#using-the-refresh-token),
   but this should be built in to your application so that it happens automatically when the access token is close
-  to expiry.
+  to expiry, for example see python [client](/API/client_example/#using-a-refresh-token).
 
   6. Update your application to use the new access token for subsequent API requests.
 

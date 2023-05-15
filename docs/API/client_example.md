@@ -60,7 +60,7 @@ def check_token_expired(token: str):
 
 ### Using a refresh token
 
-To handle obtaining a new `access_token` using your `refresh_token` (see [Using Postman to obtain an OAuth refresh token](/API/postman_refresh_token/)) you can use code like the following:
+To handle obtaining a new `access_token` using your `refresh_token` (see [Obtaining an OAuth2 refresh token](/API/client_refresh_token/)) you can use code like the following:
 
 ```python
 import httpx
