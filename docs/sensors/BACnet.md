@@ -18,7 +18,9 @@ The sensor data from all sensors can then be used by the BMS to monitor and dire
   <figcaption>Example BACnet implementation of LightFi sensors on a BMS network</figcaption>
 </figure>
 
-## LightFi Base
+## LightFi BACnet Sensors
+
+### LightFi Base
 
 The LightFi "Base" sensor is a long-range, broad level occupancy sensor, which determines the percentage occupancy levels by measuring the number active devices on a floor area, with coverage of 250 - 500+ m².
 
@@ -31,14 +33,15 @@ The LightFi "Base" sensor is a long-range, broad level occupancy sensor, which d
 
 Notes:
 
-(1) Object ID can be configured via LightFi Portal;
+1. Object ID can be configured via LightFi Portal;
 
-(2) The Object Name field will depend on the device’s MAC Address. This value should start with "LightFi_LF-".
+2. The Object Name field will depend on the device’s MAC Address. This value should start with "LightFi_LF-".
 
-## LightFi Sahara
+3. The PICS document for this sensor can be found here: [LightFi Base](https://nextcloud.lightfi.io/index.php/s/CNNrDCBdWopbjF5)
+
+### LightFi Sahara
 
 The Sahara sensor measures: Carbon Dioxide (CO2) levels with a dual-channel NDIR sensor and Particulate Matter (PM2.5).
-
 
 | Object Type   | Object ID | Object Name                     | Present Value                |
 |---------------|-----------|---------------------------------|------------------------------|
@@ -49,11 +52,13 @@ The Sahara sensor measures: Carbon Dioxide (CO2) levels with a dual-channel NDIR
 
 Notes:
 
-(1) Object ID can be configured via LightFi Portal;
+1. Object ID can be configured via LightFi Portal;
 
-(2) The Object Name field will depend on the device’s MAC Address. This value should start with "LightFi_LF5-".
+2. The Object Name field will depend on the device’s MAC Address. This value should start with "LightFi_LF5-".
 
-## LightFi Hoth
+3. The PICS document for this sensor can be found here: [LightFi Sahara](https://nextcloud.lightfi.io/index.php/s/f7kEC7t4rrD3pKo)
+
+### LightFi Hoth
 
 The Hoth sensor measures temperature, relative humidity and its own battery level.
 
@@ -67,11 +72,13 @@ The Hoth sensor measures temperature, relative humidity and its own battery leve
 
 Notes:
 
-(1) Object ID can be configured via LightFi Portal;
+1. Object ID can be configured via LightFi Portal;
 
-(2) The Object Name field will depend on the device’s MAC Address. This value should start with "LightFi_MS1-".
+2. The Object Name field will depend on the device’s MAC Address. This value should start with "LightFi_MS1-".
 
-## LightFi X1
+3. The PICS document for this sensor can be found here: [LightFi Hoth](https://nextcloud.lightfi.io/index.php/s/KnX3yiCKiKy5aCq)
+
+### LightFi X1
 
 The X1 is a battery powered Passive Infrared (PIR) motion sensor, designed to detect binary desk or room occupancy.
 
@@ -85,9 +92,11 @@ The X1 is a battery powered Passive Infrared (PIR) motion sensor, designed to de
 
 Notes:
 
-(1) Object ID can be configured via LightFi Portal;
+1. Object ID can be configured via LightFi Portal;
 
-(2) The Object Name field will depend on the device’s MAC Address. This value should start with "LightFi_AMP-". 
+2. The Object Name field will depend on the device’s MAC Address. This value should start with "LightFi_AMP-". 
+
+3. The PICS document for this sensor can be found here: [LightFi X1](https://nextcloud.lightfi.io/index.php/s/EqpYZK8X6syFMtx)
 
 ## Enabling Sensors in BACnet Network
 
