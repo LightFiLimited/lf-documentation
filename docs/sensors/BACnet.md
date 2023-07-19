@@ -143,3 +143,13 @@ A wireless sensor can only be BACnet enabled if it was previously registered on 
 ![3](../img/sensors/bacnet/07_fill_bacnet.jpg)
 4. When you press submit, a small blue circle will indicate the sensor is BACnet enabled (`1.`) and a Success/confirmation message (`2.`) will appear.
 ![4](../img/sensors/bacnet/08_bacnet_confirmation.jpg)
+
+## Viewing Sensors in BACnet Network
+
+All active LightFi sensors in a BACnet network can be viewed on the Configuration Page.
+
+After selecting the desired Location ("Sub Location" section), press the "Show BACnet Enabled Sensors" button on the "Configured Sensors" section (see image).
+
+For detailed BACnet information on a specific device, hover the mouse on the desired BACnet ID item and a tooltip will appear.
+
+![](../img/sensors/bacnet/09_viewing_bacnet_sensors.jpg)
