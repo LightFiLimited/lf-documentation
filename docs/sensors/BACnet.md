@@ -78,7 +78,7 @@ Notes:
 
 2. The Object Name field will depend on the device’s MAC Address. This value should start with "LightFi_AQ2-".
 
-3. The PICS document for this sensor can be found here: [LightFi Alpine]().
+3. The PICS document for this sensor can be found here: [LightFi Alpine](https://nextcloud.lightfi.io/index.php/s/2tH2mKtoY8gGgC8).
 
 ### LightFi Hoth
 
