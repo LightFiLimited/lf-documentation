@@ -14,7 +14,7 @@ See instructions from [OpenAPITools](https://github.com/OpenAPITools/openapi-gen
 
 An API client for python can be generated using the following example command:
 
-```openapi-generator-cli generate -i https://apiv2.lightfi.io/openapi.json -g python-nextgen --additional-properties=floatStrictType=false -o python_api_client```
+```openapi-generator-cli generate -i https://apiv2.lightfi.io/openapi.json -g python --additional-properties=floatStrictType=false -o python_api_client```
 
 After generating the API client, see the generated documentation for more info at `python_api_client/README.md`
 
