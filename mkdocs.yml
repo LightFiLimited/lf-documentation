@@ -45,3 +45,4 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.superfences
   - md_in_html  # Allows figure captions
+  # - attr_list  # Allow image resize

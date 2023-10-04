@@ -37,6 +37,6 @@ If BACnet enabled, this sensor will appear as a BACnet device on the BACnet netw
 
 ## Install guide
 
-PDF install guide (v1.2) - [Download](https://nextcloud.lightfi.io/index.php/s/F7HNYyGYDXkd2P9/download/LightFi_system_install_guide_v1.2.pdf) 
+See [Installation](./01_install.md)
 
 For more information on BACnet objects for these devices, check [BACnet section](./BACnet.md).
