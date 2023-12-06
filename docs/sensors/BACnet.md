@@ -118,7 +118,7 @@ Notes:
 
 2. The Object Name field will depend on the device’s MAC Address. This value should start with "LightFi_AMP-". 
 
-3. The PICS document for this sensor can be found here: [LightFi X1](https://nextcloud.lightfi.io/index.php/s/EqpYZK8X6syFMtx)
+3. The PICS document for this sensor can be found here: [LightFi X1](https://nextcloud.lightfi.io/index.php/s/QbCCx4ESNckXZxi)
 
 ## Enabling Sensors in BACnet Network
 
