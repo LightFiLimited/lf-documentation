@@ -48,8 +48,18 @@ The Sahara sensor measures: Carbon Dioxide (CO₂) levels with a dual-channel ND
 |---------------|-----------|---------------------------------|------------------------------|
 | Device        | (1)       | LightFi_LF5-AABBCCDDEEFF (2)    | N/A                          |
 | Analog Input  | AI1       | Carbon Dioxide level (ppm)      | Current Reading / -999 if not initialised |
-| Analog Input  | AI2       | Particulate Matter PM2.5        | Current Reading / -1 if not initialised   |
+| Analog Input  | AI2       | Particulate Matter PM2.5        | Current Reading / -999 if not initialised   |
 | Analog Input  | AI3       | RSSI                            | Current Reading / -999 if not initialised |
+
+
+Possible valid values for Present Value :
+
+| Object ID | Object Name | Minimum | Maximum |
+|--|--|--|--|
+| AI1 | Carbon Dioxide level (ppm)           | 400  | 5000 |
+| AI2 | Particulate Matter PM2.5             | 0    | 500  |
+| AI3 | RSSI                                 | -999 | -1   |
+
 
 Notes:
 
@@ -67,10 +77,21 @@ The Alpine sensor measures: Carbon Dioxide (CO₂) levels with a dual-channel ND
 |---------------|-----------|--------------------------------------|---------------------------------------------|
 | Device        | (1)       | LightFi_AQ2-AABBCCDDEEFF (2)         | N/A                                         |
 | Analog Input  | AI1       | Carbon Dioxide level (ppm)           | Current Reading / -999 if not initialised   |
-| Analog Input  | AI2       | Temperature value (Celsius)          | Current Reading / -1 if not initialised     |
-| Analog Input  | AI3       | Relative Humidity value (Percentage) | Current Reading / -1 if not initialised     |
+| Analog Input  | AI2       | Temperature value (Celsius)          | Current Reading / -999 if not initialised   |
+| Analog Input  | AI3       | Relative Humidity value (Percentage) | Current Reading / -999 if not initialised   |
 | Analog Input  | AI4       | Battery Level Value (Percentage)     | Current Reading / -999 if not initialised   |
 | Analog Input  | AI5       | RSSI                                 | Current Reading / -999 if not initialised   |
+
+Possible valid values for Present Value :
+
+| Object ID | Object Name | Minimum | Maximum |
+|--|--|--|--|
+| AI1 | Carbon Dioxide level (ppm)           | 0    | 5000    |
+| AI2 | Temperature value (Celsius)          | 0    | 65      |
+| AI3 | Relative Humidity value (Percentage) | 10   | 90      |
+| AI4 | Battery Level Value (Percentage)     | 0    | 100     |
+| AI5 | RSSI                                 | -100 | -1      |
+
 
 Notes:
 
@@ -87,10 +108,19 @@ The Hoth sensor measures temperature, relative humidity and its own battery leve
 | Object Type   | Object ID | Object Name                          | Present Value                               |
 |---------------|-----------|--------------------------------------|---------------------------------------------|
 | Device        | (1)       | LightFi_MS1-AABBCCDDEEFF (2)         | N/A                                         |
-| Analog Input  | AI1       | Temperature value (Celsius)          | Current Reading / -1 if not initialised     |
-| Analog Input  | AI2       | Relative Humidity value (Percentage) | Current Reading / -1 if not initialised     |
+| Analog Input  | AI1       | Temperature value (Celsius)          | Current Reading / -999 if not initialised     |
+| Analog Input  | AI2       | Relative Humidity value (Percentage) | Current Reading / -999 if not initialised     |
 | Analog Input  | AI3       | RSSI                                 | Current Reading / -999 if not initialised   |
 | Analog Input  | AI4       | Battery Level Value (Percentage)     | Current Reading / -999 if not initialised   |
+
+Possible valid values for Present Value :
+
+| Object ID | Object Name | Minimum | Maximum |
+|--|--|--|--|
+| AI1 | Temperature value (Celsius)           | -40  | 70   |
+| AI2 | Relative Humidity value (Percentage)  | 0    | 100  |
+| AI3 | RSSI                                  | -100 | -1   |
+| AI4 | Battery Level Value (Percentage)      | 0    | 100  |
 
 Notes:
 
@@ -108,9 +138,17 @@ The X1 is a battery powered Passive Infrared (PIR) motion sensor, designed to de
 | Object Type   | Object ID | Object Name                      | Present Value                |
 |---------------|-----------|----------------------------------|------------------------------|
 | Device        | (1)       | LightFi_AMP-AABBCCDDEEFF (2)     | N/A                          |
-| Analog Input  | AI1       | Motion Sensor (Presence)         | Current Reading / -1 if not initialised   |
+| Analog Input  | AI1       | Motion Sensor (Presence)         | Current Reading / -999 if not initialised   |
 | Analog Input  | AI3       | RSSI                             | Current Reading / -999 if not initialised |
 | Analog Input  | AI4       | Battery Level Value (Percentage) | Current Reading / -999 if not initialised |
+
+Possible valid values for Present Value :
+
+| Object ID | Object Name | Minimum | Maximum |
+|--|--|--|--|
+| AI1 | Motion Sensor (Presence)          | 0    | 1    |
+| AI2 | RSSI                              | -100 | -1   |
+| AI4 | Battery Level Value (Percentage)  | 0    | 100  |
 
 Notes:
 
@@ -119,6 +157,8 @@ Notes:
 2. The Object Name field will depend on the device’s MAC Address. This value should start with "LightFi_AMP-". 
 
 3. The PICS document for this sensor can be found here: [LightFi X1](https://nextcloud.lightfi.io/index.php/s/QbCCx4ESNckXZxi)
+
+4. The Motion Sensor Present Value will change on PIR sensor trigger - value will be set to `1` - and it will change back to `0` if no motion is detected after 5 to 15 seconds.
 
 ## Enabling Sensors in BACnet Network
 
