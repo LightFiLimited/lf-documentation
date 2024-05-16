@@ -58,7 +58,7 @@ These URLs should help start using the API but can be disabled or changed as you
 #### Implementing API requests on behalf of a user
 
 It is possible to use your OAuth2 client to allow a user to login and access data from their own account,
-such as is done with the [LightFi Dashboard](/dashboard/).
+such as is done with the [LightFi Dashboard](../dashboard/index.md).
 
 For an application of this type, where user interaction is expected regularly, using a shorter
 refresh token lifetime such as 30 days will enhance security.
@@ -73,7 +73,7 @@ To implement a machine-to-machine API shim using OAuth2 refresh tokens, you woul
   This is done by sending a request to the server's OAuth2 token endpoint
   (`oauth_url` provided with your client credentials),
   along with the appropriate grant type ("Authorization Code") and other required parameters.
-  Example of how to do this using Postman or python can be found [here](/API/client_refresh_token/).
+  Example of how to do this using Postman or python can be found [here](client_refresh_token.md).
 
   3. Store the refresh token securely.
   This is important because the refresh token can be used to obtain new access tokens,
@@ -85,9 +85,9 @@ To implement a machine-to-machine API shim using OAuth2 refresh tokens, you woul
   5. When the access token expires, use the refresh token to request a new access token from the server.
   This is done by sending a request to the server's OAuth2 token endpoint,
   along with the appropriate grant type ("refresh_token").
-  An example of how to do this using Postman can be found [here](/API/client_refresh_token/#using-the-refresh-token),
+  An example of how to do this using Postman can be found [here](client_refresh_token.md#using-postman-to-obtain-an-oauth2-refresh-token),
   but this should be built in to your application so that it happens automatically when the access token is close
-  to expiry, for example see python [client](/API/client_example/#using-a-refresh-token).
+  to expiry, for example see python [client](client_example.md#using-a-refresh-token).
 
   6. Update your application to use the new access token for subsequent API requests.
 

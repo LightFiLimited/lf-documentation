@@ -2,8 +2,8 @@
 
 Below are some basic examples of how to get started writing an API client
 for the [LightFi API](https://apiv2.lightfi.io/docs) using
-[python](/API/client_example/#python-example-api-client)
-or [typescript](/API/client_example/#typescript-example-api-client).
+[python](#python-example-api-client)
+or [typescript](#typescript-example-api-client).
 
 ## Python Example API Client
 ### Install OpenAPI generator
@@ -66,7 +66,7 @@ def check_token_expired(token: str):
 
 #### Using a refresh token
 
-To handle obtaining a new `access_token` using your `refresh_token` (see [Obtaining an OAuth2 refresh token](/API/client_refresh_token/)) you can use code like the following:
+To handle obtaining a new `access_token` using your `refresh_token` (see [Obtaining an OAuth2 refresh token](client_refresh_token.md)) you can use code like the following:
 
 ```python
 import httpx
@@ -239,7 +239,7 @@ API_REFRESH_TOKEN = {{ See documentation for how to obtain }}
 
 #### Get Refresh Token
 
-To obtain the refresh token see the documentation examples for Postman or python [here](/API/client_refresh_token).
+To obtain the refresh token see the documentation examples for Postman or python [here](client_refresh_token.md).
 
 #### Get Access Token
 

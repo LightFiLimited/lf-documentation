@@ -10,29 +10,26 @@ The BASE is a long-range, occupancy level sensor that
 makes up the core of LightFi’s multi-sensor wireless IoT
 infrastructure. It acts as a gateway and each BASE can support 100s
 of LightFi’s IoT sensors. The BASE Pro version
-includes BACnet/IP integration with all connected IoT
+includes BACnet/IP integration for all connected IoT
 sensors for building automation capabilities.
 This documentation describes how to install the BASE sensor and
-provision it on LightFi’s Portal online.
+provision it using LightFi’s [cloud portal](https://portal.lightfi.io).
 
 #### What is included
 
-The BASE sensor comes with a power supply and a mounting bracket.
-Some models may also come with a USB dongle, which receives data from LightFi's other IoT
-sensors. Please ensure the USB dongle is plugged into the BASE’s USB port before
-installation. (On most models this functionality is built into the BASE unit.)
+The BASE sensor comes with a power supply (optional) and a mounting bracket.
 
 #### Placement
-The BASE sensors is designed to be ceiling mounted. We recommend that each BASE
-sensor cover a 10m – 15m radius (100-250m²) of the floor plan when determining install locations. For open-plan areas, a coverage radius of 20m may be acceptable. For sites with many walls a
-coverage radius of < 10m may be necessary.
+The BASE sensor is designed to be ceiling mounted. We recommend that each BASE
+sensor cover a 10m – 15m radius (100 - 250m²) of the floor plan when determining install locations. For open-plan areas, a coverage radius of 20m may be acceptable. For sites with many walls a
+coverage radius of less than 10m may be necessary.
 The range of the sensors means placement can be flexible and
 adjusted to be closest to suitable cabling and mounting points.
-A typical install location is near existing WiFi Access Points.
+A typical install location is similar to WiFi Access Points.
 
 #### Power
 The BASE sensor can be powered via DC power input or Power over Ethernet (PoE) 802.3af
-(48V) via the POE Port. In almost all instances, we recommend using PoE, as this will
+(48V) via the PoE Port. In almost all instances, we recommend using PoE, as this will
 provide data and power over a single cable and can be provided
 by affordable and readily available PoE network switches.
 Where PoE is not available the device can be powered using the DC power input port (it is not necessary, or desirable, to power using both PoE and DC input simultaneously).
@@ -66,35 +63,36 @@ such as a BMS panel or comms room. The network cables will provide power to the 
 sensors, as well as a connection to the internet and BACnet/IP communication with the BMS
 (where relevant).
 The cabling topology will depend on the location of available connection ports. Two topology
-examples are provided below. In the first example a building has a single BMS panel in the
-plant room and an internet connection in the comms room. In the second example, there is a
-BMS panel on each floor with an internet connection.
+examples are shown [above](#cabling-topology-for-the-base-sensors). In the first example a building has a single BMS panel in the
+plant room, an internet connection in the comms room and network created using individual PoE switches on each floor. In the second example, there is a
+BMS panel on each floor with a separate internet connection.
 
 
 ### Provisioning the BASE sensor
 [Note: If ordering BASE sensors for a whole building it is possible to have pre-provisioned
-BASE sensors, with your required ip and BACnet settings, shipped directly from LightFi, saving
+BASE sensors, with your required IP network and BACnet settings, shipped directly from LightFi, saving
 engineer time on your install. Please contact LightFi to arrange this.]
 
-To provision the BASE sensor on LightFi’s Portal, you will need to following:
-- Base sensor powered and connected to the internet
+To provision the BASE sensor on LightFi’s Portal, you will need the following:
+
+- BASE sensor powered and connected to the internet [Note: you may need to change the ip settings on the base sensor to connect to the internet i.e. change from dhcp to static ip, please follow the guide as normal, the BASE network settings are documented at step 4.]
 - Ethernet cable
 - Physical access to the BASE sensor
 - Laptop computer with an Ethernet port and WiFi connection
 
-#### 1 - Boot sensor
+#### 1 - Power sensor
 Please ensure the BASE sensor is powered and connected to the internet. The LEDs
 indicate the status of the BASE sensor:
 
-- First LED on – the BASE sensor has power
+- First LED on – the BASE sensor indicates power
 - Second LED on – the BASE sensor is connected to the internet
 - Third LED on – the BASE sensor is detecting occupancy.
 Once plugged in, please allow 5 minutes for the boot sequence to finish before any
 troubleshooting.
 
 #### 2 - Setup service port connection
-[Note: Before you make the changes to your network configuration, note down the default LAN settings
-on your PC before changing them, this will help when resetting them back when finished.]
+[Note: Before you make the changes to your network configuration on your computer, note down the existing network settings,
+this will help when resetting them back afterwards.]
 
 Please ensure your computer is connected to the internet e.g. via WiFi.
 Setup your computer’s wired (Ethernet) network settings to enable connection to the BASE
@@ -117,18 +115,18 @@ Change adapter options > Ethernet : Properties > Internet Protocol Version 4
 ![Service Port](../img/sensors/install/5_Base_service-250px.png)
 
 Connect an Ethernet cable from your computer to the Service Port on the BASE sensor.
-Please ensure the POE Port is also connected to the internet.
+Please ensure the PoE Port is also connected to the internet.
 
 #### 4 - Launch Provisioner
-Please open your web browser (e.g. Google Chrome) and enter http://192.168.151.1 into the
+Please open your web browser and enter [http://192.168.151.1](http://192.168.151.1) into the
 address bar. You will be greeted by the BASE sensor’s service page, indicating that you are
-now connected to the BASE sensor, to the internet and the BASE sensor is itself connected
+now connected to the BASE sensor and the BASE sensor is itself connected
 to the internet. 
 
 ![Deploy](../img/sensors/install/7_deploy.png)
 
 If the BASE sensor greeting page says **“No Internet!”**, please check the BASE
-sensor’s POE Port is connected to the internet and refresh the web-page.
+sensor’s PoE Port is connected to the internet and refresh the web-page.
 You may need to change the device network settings for your network/internet setup,
 if so click the "Network Settings" button, you will require the local config password
 shipped with your device (the password can be changed from the Network Settings page).
@@ -162,8 +160,11 @@ Anyway” (or similar).
 #### 9 - Provisioning
 The BASE sensor is now being provisioned. Please do not unplug the BASE sensor from the
 computer (or internet) until the web page says that the setup has been completed. The BASE
-sensor will then reboot. Please allow up to 5 minutes for the BASE sensor to appear on the
-LightFi Portal and 10 minutes for the first data to arrive.
+sensor will then reboot. 
+
+The sensor is now provisioned and should be visible on the LightFi portal.
+(Please allow up to 5 minutes for the BASE sensor to appear on the
+LightFi Portal and 10 minutes for the first data to arrive.)
 
 
 ## Installing Sub-sensors
@@ -174,22 +175,30 @@ Installation of LightFi sub-sensors such as Sahara (Air Quality), Alpine (CO₂/
 To perform the configuration, you will need the following:
 
 - The BASE sensors installed and provisioned
-- A smartphone or similar portable device, ideally with a functional camera or a computer with web browser
+- Recommended:  A smartphone or similar portable device with the "LightFi Air" app from Apple/Google app store. This allows detecting nearby sensors directly from the phone and speeds up the install process.
+- Alternative: Access to the LightFi portal using a web browser, such as from a laptop.
 - An internet connection
+- LightFi Portal account login with admin/installer privileges for the location you wish to install the sensors
 
-### Configuration
+### Place Sensor
 
-#### 1 - Place sensor
-
-Installed the sensor in the room or location you want to monitor,
+Place the sensor in the room or location you want to monitor,
 power the sensor as per the sensor instructions.
-Ensure that it is physically accessible to you or that you have recorded the
-details needed below.
 
+### Installation using LightFi Air mobile app
 
-#### 2 - Select Install Location
+#### 1 - Scan and select sensor
 
-Login to your LightFi Portal account in a web browser on your phone. Open the main menu
+- Scan for the right data e.g. Temperature for a sensor with temperature data
+- If you are next to the sensor to install it should appear top of the list with a strong signal.
+
+#### 2 - ...
+
+### Installation using web browser
+
+#### 1 - Select Install Location
+
+Login to your LightFi Portal account. Open the main menu
 (top left) and go to the “Config” page. Using the dropdown at the top of the screen, select
 the building and floor (sub locations) where the sensor is installed.
 
@@ -197,15 +206,13 @@ the building and floor (sub locations) where the sensor is installed.
 
 #### 3 - Find the sensor
 
-To find the new sensor click on the “+” in the “Configured Sensors” section. A list
+To find the new sensor, click on the “+” in the “Configured Sensors” section. A list
 of all IoT sensors near any BASE sensor on that floor (and not already configured) will appear.
 To find a specific sensor you can press the Search icon and either:
 
 - press the square Frame icon to the left of the search bar and scan the sensor’s QR
 code with your camera; or
-- manually type in the sensor’s id (last 4 digits is usually enough)
-
-![Sensor QR](../img/sensors/install/12_sub-sensor_QR.png)
+- manually type in the sensor’s id (last 4 digits is usually enough). If you are unsure about the id of the sensor, or can't find the id on the sensor, you can use the LightFi Air app to scan for the nearest sensors, the id shown in the app is the last 4 digits of the sensor id.
 
 #### 4 - Add details
 

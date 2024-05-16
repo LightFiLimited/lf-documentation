@@ -195,7 +195,7 @@ Unlike the Base sensor, these changes will apply immediately and the sensors sho
 
 #### Example of Wireless Sensors BACnet configuration
 
-A wireless sensor can only be BACnet enabled if it was previously registered on the portal (See [here](../01_install)).
+A wireless sensor can only be BACnet enabled if it was previously registered on the portal (See [here](01_install.md)).
 
 1. Using the dashboard, select a wireless sensor and go to the sensor configuration page by clicking on "Info":
 ![1](../img/sensors/bacnet/05_select_wireless_sensor.jpg)
