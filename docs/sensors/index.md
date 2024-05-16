@@ -8,7 +8,15 @@ The LightFi "Base" sensor is a long-range, broad level occupancy sensor, which d
 
 The Base sensor also functions as a router/gateway for LightFi sensors, reporting data to the cloud and allowing configuration of sensor settings and sub-sensors via the portal or API interface.
 
-If [BACnet](BACnet.md) enabled, this sensor will also function as a BACnet router device as a BACnet device, with it’s own BACnet network number (configurable via LightFi Portal). This will allow the Base sensor itself and all configured sub-sensors to be accessible via the BACnet/IP. 
+If [BACnet](BACnet.md) enabled, this sensor will also function as a BACnet router device, with it’s own BACnet network number (configurable via LightFi Portal). This will allow the Base sensor itself and all configured sub-sensors to be accessible via BACnet/IP ([BACnet object description](BACnet/#lightfi-base)).
+
+## LightFi Alpine
+
+The Alpine sensor measures: Carbon Dioxide (CO₂) levels with a dual-channel NDIR sensor, Temperature and Relative Humidity. This sensor is battery powered and reports it's battery level.
+
+The sensor requires a configuration with a LightFi Base Sensor in order to be visible on the BACnet network.
+
+If BACnet enabled, this sensor will appear as a BACnet device on the BACnet network created by the BACnet router internal to the Base Sensor ([BACnet object description](BACnet/#lightfi-alpine)).
 
 ## LightFi Sahara
 
@@ -16,7 +24,7 @@ The Sahara sensor measures: Carbon Dioxide (CO₂) levels with a dual-channel ND
 
 The sensor requires a configuration with a LightFi Base Sensor in order to be visible on the BACnet network.
 
-If BACnet enabled, this sensor will appear as a BACnet device on the BACnet network created by the BACnet router internal to the Base Sensor.
+If BACnet enabled, this sensor will appear as a BACnet device on the BACnet network created by the BACnet router internal to the Base Sensor ([BACnet object description](BACnet/#lightfi-sahara)).
 
 ## LightFi Hoth
 
@@ -24,7 +32,7 @@ The Hoth sensor measures temperature, relative humidity and its own battery leve
 
 The sensor requires a configuration with a LightFi Base sensor in order to be visible on the BACnet network.
 
-If BACnet enabled, this sensor will appear as a BACnet device on the BACnet network created by the BACnet router internal to the Base sensor.
+If BACnet enabled, this sensor will appear as a BACnet device on the BACnet network created by the BACnet router internal to the Base sensor ([BACnet object description](BACnet/#lightfi-hoth)).
 
 ## LightFi X1
 
@@ -32,7 +40,7 @@ The X1 is a battery powered Passive Infrared (PIR) motion sensor, designed to de
 
 The sensor requires a configuration with a LightFi Base sensor in order to be visible on the BACnet network.
 
-If BACnet enabled, this sensor will appear as a BACnet device on the BACnet network created by the BACnet router internal to the Base sensor.
+If BACnet enabled, this sensor will appear as a BACnet device on the BACnet network created by the BACnet router internal to the Base sensor ([BACnet object description](BACnet/#lightfi-x1)).
 
 
 ## Install guide

@@ -169,7 +169,7 @@ Activation of the Base Sensor can be made through the LightFi Portal by accessin
 When activating the Base Sensor in our platform, the following fields are able to be configured:
 
 - Building Network Number - The network number of the existing building BACnet/IP network the sensor will be connected to e.g. 2000 (For BACnet/IP this number may not affect your implementation, if you do not know the number it may be possible to use a default like 2000);
-- VLAN Network Number - This should not clash with any other BACnet network numbers;
+- VLAN Network Number - This is the BACnet network number of the BACnet network internal to the router within the BASE sensor, this should not clash with any other existing BACnet network numbers. A good number to use for this is something related to the BACnet ID of the BASE sensor (you can even use the same number), so that it is easy to identify which networks relate to which BASE.
 - BACnet ID of the device - A unique ID for the sensor according to your BACnet/IP configuration.
 
 After entering these fields, the device will take around 2 minutes to apply the changes and create the BACnet gateway.

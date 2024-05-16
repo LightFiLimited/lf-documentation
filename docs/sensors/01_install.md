@@ -8,8 +8,8 @@
 
 The BASE is a long-range, occupancy level sensor that
 makes up the core of LightFi’s multi-sensor wireless IoT
-infrastructure. It acts as a gateway and can support 100s to
-1000s of LightFi’s IoT sensors. The BASE Pro version
+infrastructure. It acts as a gateway and each BASE can support 100s
+of LightFi’s IoT sensors. The BASE Pro version
 includes BACnet/IP integration with all connected IoT
 sensors for building automation capabilities.
 This documentation describes how to install the BASE sensor and
@@ -25,13 +25,17 @@ installation. (On most models this functionality is built into the BASE unit.)
 #### Placement
 The BASE sensors is designed to be ceiling mounted. We recommend that each BASE
 sensor cover a 10m – 15m radius (100-250m²) of the floor plan when determining install locations. For open-plan areas, a coverage radius of 20m may be acceptable. For sites with many walls a
-coverage radius of < 10m may be necessary. A typical install location is near existing WiFi
-Access Points.
+coverage radius of < 10m may be necessary.
+The range of the sensors means placement can be flexible and
+adjusted to be closest to suitable cabling and mounting points.
+A typical install location is near existing WiFi Access Points.
 
 #### Power
 The BASE sensor can be powered via DC power input or Power over Ethernet (PoE) 802.3af
 (48V) via the POE Port. In almost all instances, we recommend using PoE, as this will
-provide data and power over a single cable. Where PoE is not available the device can be powered using the DC power input port (it is not necessary, or desirable to power using both PoE and DC input simultaneously).
+provide data and power over a single cable and can be provided
+by affordable and readily available PoE network switches.
+Where PoE is not available the device can be powered using the DC power input port (it is not necessary, or desirable, to power using both PoE and DC input simultaneously).
 
 ![PoE Port](../img/sensors/install/2_Base_PoE-250px.png)
 
@@ -52,9 +56,8 @@ throughout the building. The BASE sensors are powered with Power over Ethernet (
 
 #### Using existing network ports
 The simplest install is to utilise any available spare network ports across the building. The
-BASE sensors can be plugged into existing ports (with PoE) and connected via a VLAN, or a
-physically separate network at the comms room. If no network ports are available, new cables
-need to be run.
+BASE sensors can be plugged into existing ports (with PoE) and connected via a VLAN, or directly to a separate LAN (e.g. BMS LAN) at the comms room. If no existing network connections are available,
+new cables may need to be run.
 
 #### Running new cables
 The BASE sensors can be ceiling mounted (similar to WiFi Access Points). CAT5E, CAT6 or better
@@ -69,6 +72,10 @@ BMS panel on each floor with an internet connection.
 
 
 ### Provisioning the BASE sensor
+[Note: If ordering BASE sensors for a whole building it is possible to have pre-provisioned
+BASE sensors, with your required ip and BACnet settings, shipped directly from LightFi, saving
+engineer time on your install. Please contact LightFi to arrange this.]
+
 To provision the BASE sensor on LightFi’s Portal, you will need to following:
 - Base sensor powered and connected to the internet
 - Ethernet cable
@@ -86,8 +93,8 @@ Once plugged in, please allow 5 minutes for the boot sequence to finish before a
 troubleshooting.
 
 #### 2 - Setup service port connection
-(Before you make the changes to your network configuration, note your default LAN settings
-before changing them, this will help when resetting them back when finished.)
+[Note: Before you make the changes to your network configuration, note down the default LAN settings
+on your PC before changing them, this will help when resetting them back when finished.]
 
 Please ensure your computer is connected to the internet e.g. via WiFi.
 Setup your computer’s wired (Ethernet) network settings to enable connection to the BASE
@@ -120,7 +127,7 @@ to the internet.
 
 ![Deploy](../img/sensors/install/7_deploy.png)
 
-If the BASE sensor greeting page says “No Internet!”, please check the BASE
+If the BASE sensor greeting page says **“No Internet!”**, please check the BASE
 sensor’s POE Port is connected to the internet and refresh the web-page.
 You may need to change the device network settings for your network/internet setup,
 if so click the "Network Settings" button, you will require the local config password
