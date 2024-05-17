@@ -146,8 +146,6 @@ Give the BASE sensor a name (usually the name of the area it covers), and press 
 on the floorplan to give the sensor a position (as close to where it is or to be located so that
 others can find it later), and then press “Preview”.
 
-![Deploy Location](../img/sensors/install/9_deploy_position.png)
-
 #### 7 - Check details
 Check you’re happy with the details you’ve entered and the location tree in which you’re
 creating the sensor.
