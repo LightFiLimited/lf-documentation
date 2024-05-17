@@ -166,6 +166,8 @@ The sensor is now provisioned and should be visible on the LightFi portal.
 (Please allow up to 5 minutes for the BASE sensor to appear on the
 LightFi Portal and 10 minutes for the first data to arrive.)
 
+![Device Being Provisioned](../img/sensors/install/10_being_provisioned.png)
+
 
 ## Installing Sub-sensors
 ### Overview
