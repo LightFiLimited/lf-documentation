@@ -135,18 +135,16 @@ To begin provisioning your BASE sensor on LightFi’s Portal, press “Deploy Se
 ensure your computer is connected to the internet e.g. via WiFi. You will be redirected to the
 LightFi Portal, where you can login to your LightFi account and create the sensor.
 
-#### 5 Select location
+#### 5 - Select location
 In the top left corner, select the building and floor where you want to create this BASE sensor
 using the dropdown. Then press “Next”.
 
 ![Deploy Location](../img/sensors/install/8_deploy_location.png)
 
-#### 6 Add sensor details
+#### 6 - Add sensor details
 Give the BASE sensor a name (usually the name of the area it covers), and press “Next”. Click
 on the floorplan to give the sensor a position (as close to where it is or to be located so that
 others can find it later), and then press “Preview”.
-
-![Deploy Location](../img/sensors/install/9_deploy_position.png)
 
 #### 7 - Check details
 Check you’re happy with the details you’ve entered and the location tree in which you’re
@@ -165,6 +163,8 @@ sensor will then reboot.
 The sensor is now provisioned and should be visible on the LightFi portal.
 (Please allow up to 5 minutes for the BASE sensor to appear on the
 LightFi Portal and 10 minutes for the first data to arrive.)
+
+![Device Being Provisioned](../img/sensors/install/10_being_provisioned.png)
 
 
 ## Installing Sub-sensors
