@@ -45,6 +45,6 @@ If BACnet enabled, this sensor will appear as a BACnet/IP device on the BACnet n
 
 ## Install guide
 
-See [Installation](./01_install.md)
+See [Installation](./01_install_planning.md)
 
 For more information on BACnet objects for these devices, check the [BACnet section](./BACnet.md).
