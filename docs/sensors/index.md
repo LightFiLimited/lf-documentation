@@ -34,7 +34,7 @@ provide data and power over a single cable and can be provided
 by affordable and readily available PoE network switches.
 Where PoE is not available the device can be powered using the DC power input port (it is not necessary, or desirable, to power using both PoE and DC input simultaneously).
 
-![PoE Port](../img/sensors/install/2_Base_PoE-250px.png)
+![PoE Port](../img/sensors/Base_PoE-400px.png)
 
 ## LightFi Alpine
 

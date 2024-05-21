@@ -13,8 +13,8 @@ LightFi sensors split into two categories:
 
 ### BASE devices
 
-The BASE/BASE Pro devices cover a 20m – 30m diameter area for, both,
-detecting occupancy levels, and receiving signals from
+The BASE/BASE Pro devices cover a 20m – 30m diameter area for both
+detecting occupancy levels and receiving signals from
 LightFi’s wireless sensors.
 
 Planning full floor coverage will ensure robustness and future
