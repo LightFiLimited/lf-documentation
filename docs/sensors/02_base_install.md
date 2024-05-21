@@ -39,7 +39,7 @@ Manually
 Change adapter options > Ethernet : Properties > Internet Protocol Version 4
 (TCP/IPv4) : Properties > Use the following IP address
 
-![Network settings](../img/sensors/install/6_mac change ip.png)
+![Network settings](../img/sensors/install/6_win_change_ip.webp)
 
 ### 3 - Connect to sensor
 
