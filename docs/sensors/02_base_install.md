@@ -19,7 +19,7 @@ provision it using LightFi’s [cloud portal](https://portal.lightfi.io).
 The BASE sensor comes with a power supply (optional) and a mounting bracket.
 
 ### Placement
-For a detailed description see [Install Planning](01_install_planning.md#sensor-layout)
+For a detailed description see [Install Planning](01_install_planning.md#sensor-layout).
 
 The BASE sensor is designed to be ceiling mounted. We recommend that each BASE
 sensor cover a 10m – 15m radius (100 - 250m²) of the floor plan when determining install locations. For open-plan areas, a coverage radius of 20m may be acceptable. For sites with many walls a

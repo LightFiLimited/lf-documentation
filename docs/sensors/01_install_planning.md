@@ -31,6 +31,7 @@ for full coverage of an office floor (with Ethernet cable runs). The BASE Pro is
 and its long detection range allows for flexible placement to utilise existing cabling routes.
 
 ### Wireless sensors
+
 The line-of-sight communication capability of the wireless sensors is up
 to 100m, however, for robustness and continuity please keep wireless
 sensors within 20m or less of a BASE Pro.
@@ -49,9 +50,24 @@ These sensors need local 12-24V DC power, and measure:
 We recommend issuing at least one Alpine sensor per BASE Pro for open plan areas, and as
 needed for meeting rooms and/or other clients’ needs. Some of the bigger rooms (board
 rooms, etc) may benefit from more than one CO₂ sensor.
+
 The annotated floor plans below give an example of sensor deployments.
 
+<figure markdown>
+  ![Floor Example 1](../img/sensors/install/layout_floor1_500px.png)
+  <figcaption>Example 1</figcaption>
+</figure>
+<figure markdown>
+  ![Floor Example 2](../img/sensors/install/layout_floor2_500px.png)
+  <figcaption>Example 2</figcaption>
+</figure>
+<figure markdown>
+  ![Floor Example 3](../img/sensors/install/layout_floor3_500px.png)
+  <figcaption>Example 3</figcaption>
+</figure>
+
 ## Cabling topology for the BASE sensors
+
 The cabling topology for the BASE sensors will depend on available network ports
 throughout the building. The BASE sensors are powered with Power over Ethernet (PoE)
 802.3af, such that power and data can be handled with a single Ethernet cable.
@@ -67,11 +83,13 @@ throughout the building. The BASE sensors are powered with Power over Ethernet (
 </figure>
 
 ### Using existing network ports
+
 The simplest install is to utilise any available spare network ports across the building. The
 BASE sensors can be plugged into existing ports (with PoE) and connected via a VLAN, or directly to a separate LAN (e.g. BMS LAN) at the comms room. If no existing network connections are available,
 new cables may need to be run.
 
 ### Running new cables
+
 The BASE sensors can be ceiling mounted (similar to WiFi Access Points). CAT5E, CAT6 or better
 network cables need to be run from the BASE sensors to a nearby network connection point,
 such as a BMS panel or comms room. The network cables will provide power to the BASE
