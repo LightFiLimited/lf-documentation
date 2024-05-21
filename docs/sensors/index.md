@@ -5,7 +5,7 @@ LightFi produce a range of sensors for gathering building data and facilitation 
 ## LightFi BASE / BASE Pro
 
 <!-- ![BASE sensor](../img/sensors/install/1_Base@300x.png){: style="height:300px;width:300px"} -->
-![BASE sensor](../img/sensors/install/1_Base-300px.png)
+![BASE sensor](../img/sensors/Overview_Base_front_400px.png)
 
 The LightFi "BASE" sensor is a long-range, broad level occupancy sensor, which determines the occupancy levels by measuring the number active devices on a floor area, with coverage of 250 – 1000 square meters depending on placement and number of walls etc. (the sensors can function through walls but the range is reduced).
 
@@ -38,6 +38,8 @@ Where PoE is not available the device can be powered using the DC power input po
 
 ## LightFi Alpine
 
+![Alpine sensor](../img/sensors/Overview_Alpine_side.png)
+
 The Alpine is a battery powered sensor that measures: Carbon Dioxide (CO₂) levels with a dual-channel NDIR sensor, Temperature and Relative Humidity.
 
 The sensor requires a configuration with a LightFi BASE Sensor in order to be visible on the BACnet network.
@@ -45,6 +47,7 @@ The sensor requires a configuration with a LightFi BASE Sensor in order to be vi
 If BACnet enabled, this sensor will appear as a BACnet/IP device on the BACnet network created by the BACnet router internal to the BASE Sensor ([BACnet object description](BACnet.md/#lightfi-alpine)).
 
 ## LightFi Sahara
+![Sahara sensor](../img/sensors/Overview_Sahara_side.png)
 
 The Sahara sensor measures: Carbon Dioxide (CO₂) levels with a dual-channel NDIR sensor and Particulate Matter (PM2.5).
 
@@ -61,6 +64,8 @@ The sensor requires a configuration with a LightFi BASE sensor in order to be vi
 If BACnet enabled, this sensor will appear as a BACnet/IP device on the BACnet network created by the BACnet router internal to the BASE sensor ([BACnet object description](BACnet.md/#lightfi-hoth)).
 
 ## LightFi X1
+
+![X1 sensor](../img/sensors/Overview_X1_front.png)
 
 The X1 is a battery powered Passive Infrared (PIR) motion sensor, designed to detect binary desk or room occupancy. 
 
