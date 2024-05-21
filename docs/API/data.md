@@ -11,6 +11,7 @@ Each sensor may report multiple data of different types e.g. temperature, humidi
 | `CO2ppm` | 850  | ppm | measured Carbon Dioxide concentration in parts per million |
 | `clientsBLE` | 20  | count | number of occupancy indicating devices observed on BLE |
 | `clientsWiFi` | 20  | count | number of occupancy indicating devices observed on WiFi |
+| `energyInkWh` | 2000.0  | kWh | Total energy consumed (directional rather than net) e.g. electricity meter reading |
 | `illuminanceArb` | 20.0  | arbitrary | measured light level |
 | `motionEvent` | 1  | arbitrary | Each data point indicates a detected motion event, the value can be ignored but gives an indication of the number of recent events (see [below](#motionevent-data)) |
 | `occSignatures` | 2  | count | measured signatures (people) under the sensor |

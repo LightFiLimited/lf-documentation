@@ -176,8 +176,8 @@ After entering these fields, the device will take around 2 minutes to apply the 
 
 #### Example of Base Sensor BACnet configuration
 
-1. Using the LightFi Portal dashboard, select a sensor and go to the sensor configuration page by clicking on "Info":
-![1](../img/sensors/bacnet/01_select_sensor.jpg)
+1. Using the LightFi Portal dashboard, select a sensor and go to the sensor configuration page. You can do this either by using the config page to navigate to the location for the sensor and selecting it or by selecting "Sensor Info" from the sensor menu on the dashboard data list (as below):
+![1](../img/sensors/bacnet/01_select_sensor.png)
 2. On the Sensor Configuration page, click on "BACnet Config" section and then press "Enable":
 ![2](../img/sensors/bacnet/02_bacnet_config.jpg)
 3. Press on the "Enable" button, fill the fields and then press "Submit":
@@ -197,8 +197,8 @@ Unlike the Base sensor, these changes will apply immediately and the sensors sho
 
 A wireless sensor can only be BACnet enabled if it was previously registered on the portal (See [here](01_install.md)).
 
-1. Using the dashboard, select a wireless sensor and go to the sensor configuration page by clicking on "Info":
-![1](../img/sensors/bacnet/05_select_wireless_sensor.jpg)
+1. Using the LightFi Portal dashboard, select a sensor and go to the sensor configuration page. You can do this either by using the config page to navigate to the location for the sensor and selecting it or by selecting "Sensor Info" from the sensor menu on the dashboard data list (as below):
+![1](../img/sensors/bacnet/05_select_wireless_sensor.png)
 2. On the Sensor Configuration page, click on "BACnet Config" section and then press "Enable":
 ![2](../img/sensors/bacnet/06_bacnet_config.jpg)
 3. Fill the fields and then press "Submit":
