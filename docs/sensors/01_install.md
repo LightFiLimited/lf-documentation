@@ -182,8 +182,9 @@ To perform the configuration, you will need the following:
 
 ### Place Sensor
 
-Place the sensor in the room or location you want to monitor,
-power the sensor as per the sensor instructions.
+To simplify the installation process keep the sub-sensors unpowered until they are in position. Place the sensor in the room or location you want to monitor,
+one-by-one power the sensor as per the sensor instructions and
+install it using the following instructions.
 
 ### Installation using LightFi Air mobile app
 
