@@ -1,43 +1,5 @@
-# Installing BASE sensors
+# BASE sensor provisioning
 
-## Overview
-### General
-<!-- ![BASE sensor](../img/sensors/install/1_Base@300x.png){: style="height:300px;width:300px"} -->
-![BASE sensor](../img/sensors/install/1_Base-300px.png)
-
-The BASE is a long-range, occupancy level sensor that
-makes up the core of LightFi’s multi-sensor wireless IoT
-infrastructure. It acts as a gateway and each BASE can support 100s
-of LightFi’s IoT sensors. The BASE Pro version
-includes BACnet/IP integration for all connected IoT
-sensors for building automation capabilities.
-This documentation describes how to install the BASE sensor and
-provision it using LightFi’s [cloud portal](https://portal.lightfi.io).
-
-### What is included
-
-The BASE sensor comes with a power supply (optional) and a mounting bracket.
-
-### Placement
-For a detailed description see [Install Planning](01_install_planning.md#sensor-layout).
-
-The BASE sensor is designed to be ceiling mounted. We recommend that each BASE
-sensor cover a 10m – 15m radius (100 - 250m²) of the floor plan when determining install locations. For open-plan areas, a coverage radius of 20m may be acceptable. For sites with many walls a
-coverage radius of less than 10m may be necessary.
-The range of the sensors means placement can be flexible and
-adjusted to be closest to suitable cabling and mounting points.
-A typical install location is similar to WiFi Access Points.
-
-### Power
-The BASE sensor can be powered via DC power input or Power over Ethernet (PoE) 802.3af
-(48V) via the PoE Port. In almost all instances, we recommend using PoE, as this will
-provide data and power over a single cable and can be provided
-by affordable and readily available PoE network switches.
-Where PoE is not available the device can be powered using the DC power input port (it is not necessary, or desirable, to power using both PoE and DC input simultaneously).
-
-![PoE Port](../img/sensors/install/2_Base_PoE-250px.png)
-
-## Provisioning the BASE sensor
 [Note: If ordering BASE sensors for a whole building it is possible to have pre-provisioned
 BASE sensors, with your required IP network and BACnet settings, shipped directly from LightFi, saving
 engineer time on your install. Please contact LightFi to arrange this.]

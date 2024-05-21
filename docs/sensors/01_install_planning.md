@@ -30,6 +30,8 @@ The annotated floor plans below give an example of the number of BASE Pro sensor
 for full coverage of an office floor (with Ethernet cable runs). The BASE Pro is ceiling mounted,
 and its long detection range allows for flexible placement to utilise existing cabling routes.
 
+Base sensor power and placement is described in more detail in the [overview](index.md#placement).
+
 ### Wireless sensors
 
 The line-of-sight communication capability of the wireless sensors is up
@@ -50,6 +52,8 @@ These sensors need local 12-24V DC power, and measure:
 We recommend issuing at least one Alpine sensor per BASE Pro for open plan areas, and as
 needed for meeting rooms and/or other clients’ needs. Some of the bigger rooms (board
 rooms, etc) may benefit from more than one CO₂ sensor.
+
+### Sensor Layout Examples
 
 The annotated floor plans below give an example of sensor deployments.
 
@@ -100,4 +104,6 @@ examples are shown [above](#cabling-topology-for-the-base-sensors). In the first
 plant room, an internet connection in the comms room and network created using individual PoE switches on each floor. In the second example, there is a
 BMS panel on each floor with a separate internet connection.
 
+## Next Steps
 
+After planning the install and cabling, it is probably easiest to perform [BASE sensor provisioning](02_base_install.md) before installing the sensors to their final location.

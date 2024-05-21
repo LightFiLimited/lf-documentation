@@ -2,13 +2,39 @@
 
 LightFi produce a range of sensors for gathering building data and facilitation of building control via integration with the Building Management System (BMS)
 
-## LightFi BASE
+## LightFi BASE / BASE Pro
 
-The LightFi "BASE" sensor is a long-range, broad level occupancy sensor, which determines the percentage occupancy levels by measuring the number active devices on a floor area, with coverage of 250 – 1000 square meters depending on placement and number of walls etc. (the sensors can function through walls but the range is reduced).
+<!-- ![BASE sensor](../img/sensors/install/1_Base@300x.png){: style="height:300px;width:300px"} -->
+![BASE sensor](../img/sensors/install/1_Base-300px.png)
+
+The LightFi "BASE" sensor is a long-range, broad level occupancy sensor, which determines the occupancy levels by measuring the number active devices on a floor area, with coverage of 250 – 1000 square meters depending on placement and number of walls etc. (the sensors can function through walls but the range is reduced).
 
 The BASE sensor also functions as a router/gateway for LightFi sensors, reporting data to the cloud and allowing configuration of sensor settings and sub-sensors via the portal or API interface.
+Each base can support 100s of wireless sub-sensors.
 
-If [BACnet](BACnet.md) enabled, this sensor will also function as a BACnet router device, with it’s own BACnet network number (configurable via LightFi Portal). This will allow the BASE sensor itself and all configured sub-sensors to be accessible via BACnet/IP ([BACnet object description](BACnet.md/#lightfi-base)).
+If [BACnet](BACnet.md) enabled [BASE Pro only], this sensor will also function as a BACnet/IP router device, with it’s own BACnet network number (configurable via LightFi Portal). This will allow the BASE sensor itself and all configured sub-sensors to be accessible via BACnet/IP ([BACnet object description](BACnet.md/#lightfi-base)).
+
+### What is included
+
+The BASE sensor comes with a power supply (optional) and a mounting bracket.
+
+### Placement
+For a detailed description of where sensors should be located within the building
+see [Install Planning](01_install_planning.md#sensor-layout).
+
+The BASE sensor is designed to be ceiling mounted.
+The range of the sensors means placement can be flexible and
+adjusted to be closest to suitable cabling and mounting points.
+A typical install location is similar to WiFi Access Points.
+
+### Power
+The BASE sensor can be powered via DC power input or Power over Ethernet (PoE) 802.3af
+(48V) via the PoE Port. In almost all instances, we recommend using PoE, as this will
+provide data and power over a single cable and can be provided
+by affordable and readily available PoE network switches.
+Where PoE is not available the device can be powered using the DC power input port (it is not necessary, or desirable, to power using both PoE and DC input simultaneously).
+
+![PoE Port](../img/sensors/install/2_Base_PoE-250px.png)
 
 ## LightFi Alpine
 
