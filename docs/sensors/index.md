@@ -44,6 +44,13 @@ The Alpine is a battery powered sensor that measures: Carbon Dioxide (CO₂) lev
 
 The sensor requires a configuration with a LightFi BASE Sensor in order to be visible on the BACnet network.
 
+### Power-on
+
+Using the button that is inside the sensor box, next to the battery holder. Please take off the front plate to access.
+
+  - ON: press-and-hold the button, LED will long-blink once
+  - OFF: press-and-hold the button, LED will blink twice
+
 If BACnet enabled, this sensor will appear as a BACnet/IP device on the BACnet network created by the BACnet router internal to the BASE Sensor ([BACnet object description](BACnet.md/#lightfi-alpine)).
 
 ## LightFi Sahara
@@ -72,6 +79,14 @@ The X1 is a battery powered Passive Infrared (PIR) motion sensor, designed to de
 The sensor requires a configuration with a LightFi BASE sensor in order to be visible on the BACnet network.
 
 If BACnet enabled, this sensor will appear as a BACnet/IP device on the BACnet network created by the BACnet router internal to the BASE sensor ([BACnet object description](BACnet.md/#lightfi-x1)).
+
+### Power
+
+Pressing on the front face of the sensor will activate the button - you will hear a click.
+Use this button to turn the sensor:
+
+  - ON: press the front face once, blue LED will blink once
+  - OFF: double press the front face, blue LED will blink twice
 
 
 ## Install guide
