@@ -6,6 +6,7 @@ for the [LightFi API](https://apiv2.lightfi.io/docs) using
 or [typescript](#typescript-example-api-client).
 
 ## Python Example API Client
+
 ### Install OpenAPI generator
 
 See instructions from [OpenAPITools](https://github.com/OpenAPITools/openapi-generator/)
@@ -14,13 +15,14 @@ See instructions from [OpenAPITools](https://github.com/OpenAPITools/openapi-gen
 
 An API client for python can be generated using the following example command:
 
-```openapi-generator-cli generate -i https://apiv2.lightfi.io/openapi.json -g python --additional-properties=floatStrictType=false -o python_api_client```
+`openapi-generator-cli generate -i https://apiv2.lightfi.io/openapi.json -g python --additional-properties=floatStrictType=false -o python_api_client`
 
 After generating the API client, see the generated documentation for more info at `python_api_client/README.md`
 
 ### Client script
 
 #### Basic starting place
+
 A basic example script to make an API call using python3
 
 ```python
@@ -63,7 +65,6 @@ def check_token_expired(token: str):
     return True  # Token expired or will expire in the next 10s
 ```
 
-
 #### Using a refresh token
 
 To handle obtaining a new `access_token` using your `refresh_token` (see [Obtaining an OAuth2 refresh token](client_refresh_token.md)) you can use code like the following:
@@ -105,17 +106,20 @@ Combining the token validation and refreshing mechanisms, we can design a wrappe
 ```python
 import os
 import time
-from datetime import datetime
-from typing import Callable, TypeVar
-
-T = TypeVar("T")  # To allow linter to recognise return types from API wrapper
-
 import httpx
 import jwt  # pyJWT
 
 import openapi_client
 from openapi_client.models.var_name import VarName
+from openapi_client.models.project_sensor_latest import ProjectSensorLatest
+from openapi_client.models.sensor_latest import SensorLatest
 from openapi_client.rest import ApiException
+from datetime import datetime
+
+
+from typing import Callable, TypeVar
+
+T = TypeVar("T")  # To allow linter to recognise return types from API wrapper
 
 
 def check_access_token_expired(token: str | None) -> bool:
@@ -128,7 +132,9 @@ def check_access_token_expired(token: str | None) -> bool:
     return True  # Token expired or will expire in the next 10s
 
 
-def refresh_oauth2_token(token_url: str, client_id: str, client_secret: str, refresh_token: str):
+def refresh_oauth2_token(
+    token_url: str, client_id: str, client_secret: str, refresh_token: str
+):
     data = {
         "grant_type": "refresh_token",
         "client_id": client_id,
@@ -148,7 +154,12 @@ def refresh_oauth2_token(token_url: str, client_id: str, client_secret: str, ref
 
 class OAuthAPI:
     def __init__(
-        self, host: str, token_url: str, client_id: str, client_secret: str, refresh_token: str
+        self,
+        host: str,
+        token_url: str,
+        client_id: str,
+        client_secret: str,
+        refresh_token: str,
     ):
         self.configuration = openapi_client.Configuration(host=host)
         self.token_url = token_url
@@ -184,18 +195,25 @@ host = "https://apiv2.lightfi.io"
 token_url = "https://lightfiv2.auth.eu-west-2.amazoncognito.com/oauth2/token"
 client_id = os.environ["CLIENT_ID"]
 client_secret = os.environ["CLIENT_SECRET"]
-refresh_token = os.environ["REFRESH_TOKEN"]  # Remember to keep token up to date as required for your client settings
+refresh_token = os.environ[
+    "REFRESH_TOKEN"
+]  # Remember to keep token up to date as required for your client settings
 api = OAuthAPI(host, token_url, client_id, client_secret, refresh_token)
 
 
-def get_sensor_latest_data(api_client, sensor_id):
+def get_sensor_latest_data(api_client, sensor_id) -> SensorLatest:
     api_instance = openapi_client.DefaultApi(api_client)
     return api_instance.read_latest_sensor_information_sensors_sensor_id_get(
-        sensor_id, project=["latest", "value"]
+        sensor_id,
+        project=[
+            ProjectSensorLatest.DATA,
+            ProjectSensorLatest.VALUE,
+            ProjectSensorLatest.TIME,
+        ],
     )
 
 
-sensor_id = "AQ2-FE753C0D7ADF"
+sensor_id = "AQ2-AABBCCDDEEFF"
 
 timestamp, timestamp_last = None, None
 value = None
@@ -205,7 +223,9 @@ while True:
         for datum in api_response.data:
             if datum.var_name == VarName.CO2PPM:
                 if datum.time is not None and datum.value is not None:
-                    timestamp = datetime.fromtimestamp(datum.time).strftime("%Y-%m-%d %H:%M:%S")
+                    timestamp = datetime.fromtimestamp(datum.time).strftime(
+                        "%Y-%m-%d %H:%M:%S"
+                    )
                     value = datum.value
     if timestamp != timestamp_last:
         print(f"{timestamp} CO2 level: {value} ppm")
@@ -246,22 +266,22 @@ To obtain the refresh token see the documentation examples for Postman or python
 After generating refresh token. Access token can be generated using following function:
 
 ```typescript
-const  getAccessToken = async () => {
-	const  accessToken = await  fetch(process.env.API_AUTH_TOKEN_URL, {
-		method:  "POST",
-		headers: {
-			"Content-Type":  "application/x-www-form-urlencoded",
-		},
-		body:  new  URLSearchParams({
-			grant_type:  "refresh_token",
-			client_id:  API_TOKEN_CLIENT_ID,
-			client_secret:  API_TOKEN_CLIENT_SECRET,
-			refresh_token:  AUTHORIZATION_REFRESH_TOKEN,
-		}),
-	})
-		.then((response) =>  response.json())
-		.then((data) =>  data.access_token);
-	return  accessToken;
+const getAccessToken = async () => {
+  const accessToken = await fetch(process.env.API_AUTH_TOKEN_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: new URLSearchParams({
+      grant_type: "refresh_token",
+      client_id: API_TOKEN_CLIENT_ID,
+      client_secret: API_TOKEN_CLIENT_SECRET,
+      refresh_token: AUTHORIZATION_REFRESH_TOKEN,
+    }),
+  })
+    .then((response) => response.json())
+    .then((data) => data.access_token);
+  return accessToken;
 };
 ```
 
@@ -270,13 +290,13 @@ const  getAccessToken = async () => {
 Generated Access token can be finally used to create api config and perform API calls
 
 ```typescript
-const  apiConfig = async () =>
-	new  Configuration({
-		basePath:  API_URL,
-		accessToken:  await  getAccessToken(),
-	});
+const apiConfig = async () =>
+  new Configuration({
+    basePath: API_URL,
+    accessToken: await getAccessToken(),
+  });
 
-const  apiService = async () =>  new  DefaultApi(await  apiConfig());
+const apiService = async () => new DefaultApi(await apiConfig());
 ```
 
 #### Example API Call
