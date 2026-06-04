@@ -163,12 +163,12 @@ Notes:
 
 ### LightFi CQ1
 
-The CQ1 (Everest) is a battery powered sensor that measures CO₂ levels, Temperature, Relative Humidity and includes a Passive Infrared (PIR) motion sensor.
+The CQ1 (Everest) is a battery powered sensor that measures Carbon Dioxide (CO₂) levels with a dual-channel NDIR sensor, Temperature (Celsius), Relative Humidity (Percentage) and includes a Passive Infrared (PIR) motion sensor.
 
 | Object Type   | Object ID | Object Name                           | Present Value                             |
 |---------------|-----------|---------------------------------------|-------------------------------------------|
 | Device        | (1)       | LightFi_CQ1-AABBCCDDEEFF (2)          | N/A                                       |
-| Analog Input  | AI1       | Carbon Dioxide level (ppm)            | Current Reading / -999 if not initialised |
+| Analog Input  | AI1       | Carbon Dioxide level (ppm)            | Current Reading / -1 if not initialised   |
 | Analog Input  | AI2       | Temperature (Celsius)                 | Current Reading / -1 if not initialised   |
 | Analog Input  | AI3       | Temperature Control Offset (Celsius)  | Current Reading / -999 if not initialised |
 | Analog Input  | AI4       | Relative Humidity (Percentage)        | Current Reading / -999 if not initialised |
@@ -194,7 +194,7 @@ Notes:
 
 2. The Object Name field will depend on the device’s MAC Address. This value should start with "LightFi_CQ1-". 
 
-3. The PICS document for this sensor can be found here: [LightFi CQ1](https://nextcloud.lightfi.io/index.php/s/QbCCx4ESNckXZxi)
+3. The PICS document for this sensor can be found here: [LightFi CQ1](https://nextcloud.lightfi.io/index.php/s/iw8RGA2X3iHxrWt)
 
 <!-- TODO: 4. The Motion Sensor Present Value will change on PIR sensor trigger - value will be set to `1` - and it will change back to `0` if no motion is detected after 5 to 15 seconds. -->
 
