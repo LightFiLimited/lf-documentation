@@ -163,7 +163,7 @@ Notes:
 
 ### LightFi CQ1
 
-The CQ1 (Everest) is a battery powered sensor that measures Carbon Dioxide (CO₂) levels with a dual-channel NDIR sensor, Temperature (Celsius), Relative Humidity (Percentage) and includes a Passive Infrared (PIR) motion sensor.
+The CQ1 - Everest is a battery powered interactive control unit and sensor with energy harvesting. It measures Carbon Dioxide (CO₂) levels with a dual-channel NDIR sensor, Temperature (Celsius), Relative Humidity (Percentage) and includes a Passive Infrared (PIR) motion sensor.
 
 | Object Type   | Object ID | Object Name                           | Present Value                             |
 |---------------|-----------|---------------------------------------|-------------------------------------------|
