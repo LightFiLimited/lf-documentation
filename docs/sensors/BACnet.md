@@ -9,6 +9,7 @@ These sensors are able to measure different types of data and report this data d
 - [Sahara](#lightfi-sahara) - CO₂ and Particulate Matter;
 - [Alpine](#lightfi-alpine) - CO₂, Temperature and Relative Humidity;
 - [X1](#lightfi-x1) - Presence;
+- [CQ1 - Everest](#lightfi-cq1) - CO₂, Temperature, Relative Humidity, Presence;
 
 The [Base](#lightfi-base) sensor includes wireless technology capabilities that allow it to act as a gateway for receiving data from the other sensors and send it to the LightFi cloud [platform](http://portal.lightfi.io) for data visualisation. The Base sensor also acts as a gateway for the BACnet/IP implementation, enabling the Base to create BACnet representations of the actual wireless sensors.
 
@@ -159,6 +160,43 @@ Notes:
 3. The PICS document for this sensor can be found here: [LightFi X1](https://nextcloud.lightfi.io/index.php/s/QbCCx4ESNckXZxi)
 
 4. The Motion Sensor Present Value will change on PIR sensor trigger - value will be set to `1` - and it will change back to `0` if no motion is detected after 5 to 15 seconds.
+
+### LightFi CQ1
+
+The CQ1 (Everest) is a battery powered sensor that measures Carbon Dioxide (CO₂) levels with a dual-channel NDIR sensor, Temperature (Celsius), Relative Humidity (Percentage) and includes a Passive Infrared (PIR) motion sensor.
+
+| Object Type   | Object ID | Object Name                           | Present Value                             |
+|---------------|-----------|---------------------------------------|-------------------------------------------|
+| Device        | (1)       | LightFi_CQ1-AABBCCDDEEFF (2)          | N/A                                       |
+| Analog Input  | AI1       | Carbon Dioxide level (ppm)            | Current Reading / -1 if not initialised   |
+| Analog Input  | AI2       | Temperature (Celsius)                 | Current Reading / -1 if not initialised   |
+| Analog Input  | AI3       | Temperature Control Offset (Celsius)  | Current Reading / -999 if not initialised |
+| Analog Input  | AI4       | Relative Humidity (Percentage)        | Current Reading / -999 if not initialised |
+| Analog Input  | AI5       | Motion Sensor (Presence)              | Current Reading / -1 if not initialised   |
+| Analog Input  | AI6       | Battery Level Value (Percentage)      | Current Reading / -1 if not initialised   |
+| Analog Input  | AI7       | RSSI                                  | Current Reading / -999 if not initialised |
+
+Possible valid values for Present Value :
+
+| Object ID | Object Name | Minimum | Maximum |
+|--|--|--|--|
+| AI1 | Carbon Dioxide level (ppm)            | 0    | 5000 |
+| AI2 | Temperature (Celsius)                 | -40  | 70   |
+| AI3 | Temperature Control Offset (Celsius)  | -3   | 3    |
+| AI4 | Relative Humidity (Percentage)        | 0    | 100  |
+| AI5 | Motion Sensor (Presence)              | 0    | 1    |
+| AI6 | Battery Level Value (Percentage)      | 0    | 100  |
+| AI7 | RSSI                                  | -100 | -1   |
+
+Notes:
+
+1. Object ID can be configured via LightFi Portal;
+
+2. The Object Name field will depend on the device’s MAC Address. This value should start with "LightFi_CQ1-". 
+
+3. The PICS document for this sensor can be found here: [LightFi CQ1](https://nextcloud.lightfi.io/index.php/s/iw8RGA2X3iHxrWt)
+
+<!-- TODO: 4. The Motion Sensor Present Value will change on PIR sensor trigger - value will be set to `1` - and it will change back to `0` if no motion is detected after 5 to 15 seconds. -->
 
 ## Enabling Sensors in BACnet Network
 
