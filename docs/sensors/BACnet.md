@@ -9,7 +9,7 @@ These sensors are able to measure different types of data and report this data d
 - [Sahara](#lightfi-sahara) - CO₂ and Particulate Matter;
 - [Alpine](#lightfi-alpine) - CO₂, Temperature and Relative Humidity;
 - [X1](#lightfi-x1) - Presence;
-- [CQ2 - Everest](#lightfi-cq2) - CO₂, Temperature, Relative Humidity, Presence;
+- [CQ2 - Everest](#lightfi-cq2---everest) - CO₂, Temperature, Relative Humidity, Presence;
 
 The [Base](#lightfi-base) sensor includes wireless technology capabilities that allow it to act as a gateway for receiving data from the other sensors and send it to the LightFi cloud [platform](http://portal.lightfi.io) for data visualisation. The Base sensor also acts as a gateway for the BACnet/IP implementation, enabling the Base to create BACnet representations of the actual wireless sensors.
 
@@ -161,7 +161,7 @@ Notes:
 
 4. The Motion Sensor Present Value will change on PIR sensor trigger - value will be set to `1` - and it will change back to `0` if no motion is detected after 5 to 15 seconds.
 
-### LightFi CQ2
+### LightFi CQ2 - Everest
 
 The CQ2 - Everest is a battery powered interactive control unit and sensor with energy harvesting. It measures Carbon Dioxide (CO₂) levels with a dual-channel NDIR sensor, Temperature (Celsius), Relative Humidity (Percentage) and includes a Passive Infrared (PIR) motion sensor.
 
