@@ -9,7 +9,7 @@ These sensors are able to measure different types of data and report this data d
 - [Sahara](#lightfi-sahara) - CO₂ and Particulate Matter;
 - [Alpine](#lightfi-alpine) - CO₂, Temperature and Relative Humidity;
 - [X1](#lightfi-x1) - Presence;
-- [CQ2 - Everest](#lightfi-cq2---everest) - CO₂, Temperature, Relative Humidity, Presence;
+- [CQ2 - Everest](#lightfi-cq2-everest) - CO₂, Temperature, Relative Humidity, Presence;
 
 The [Base](#lightfi-base) sensor includes wireless technology capabilities that allow it to act as a gateway for receiving data from the other sensors and send it to the LightFi cloud [platform](http://portal.lightfi.io) for data visualisation. The Base sensor also acts as a gateway for the BACnet/IP implementation, enabling the Base to create BACnet representations of the actual wireless sensors.
 
@@ -163,7 +163,7 @@ Notes:
 
 ### LightFi CQ2 - Everest
 
-The CQ2 - Everest is a battery powered interactive control unit and sensor with energy harvesting. It measures Carbon Dioxide (CO₂) levels with a dual-channel NDIR sensor, Temperature (Celsius), Relative Humidity (Percentage) and includes a Passive Infrared (PIR) motion sensor.
+The CQ2 - Everest is a wireless user interface controller and sensor. It provides an interface to adjust Temperature Setpoint and measures Carbon Dioxide (CO₂), Temperature, Relative Humidity and Motion (PIR).
 
 | Object Type   | Object ID | Object Name                           | Present Value                               |
 |---------------|-----------|---------------------------------------|---------------------------------------------|
@@ -198,6 +198,8 @@ Notes:
 2. The Object Name field will depend on the device’s MAC Address. This value should start with "LightFi_CQ2-". 
 
 3. The PICS document for this sensor can be found here: [LightFi CQ2](https://nextcloud.lightfi.io/index.php/s/RC4K8ypHCzBmR3F)
+
+4. Setpoint Active (BI2) identifies how long ago the temperature setpoint was last adjusted by the user. BI2 becomes active (1) as soon as the temperature setpoint is manually changed on the device by the user. BI2 becomes *stale* (0) after [X hours] since temperature adjusted by user, with a continuous extension for [Y minutes] after last motion detected. The parameters [] can be adjusted on the device's config page, *including [off] to keep BI2 always active (1)*.
 
 <!-- TODO: 4. The Motion Sensor Present Value will change on PIR sensor trigger - value will be set to `1` - and it will change back to `0` if no motion is detected after 5 to 15 seconds. -->
 
